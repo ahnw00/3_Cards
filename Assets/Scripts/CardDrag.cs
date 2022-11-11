@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CardDrag : MonoBehaviour
 {
-    public bool isTrigger = true;
     public CardDetector detectedSlot;
 
     public void DragCard()

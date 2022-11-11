@@ -312,7 +312,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 160, y: 200}
+  m_Size: {x: 120, y: 150}
   m_EdgeRadius: 0
 --- !u!50 &123817327
 Rigidbody2D:
@@ -329,7 +329,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -392,7 +392,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ed1cf26d4211b4096f581283be7866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTriggered: 0
   detectedSlot: {fileID: 0}
 --- !u!1 &128699303
 GameObject:
@@ -499,7 +498,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 160, y: 200}
+  m_Size: {x: 120, y: 150}
   m_EdgeRadius: 0
 --- !u!50 &128699308
 Rigidbody2D:
@@ -516,7 +515,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -579,7 +578,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ed1cf26d4211b4096f581283be7866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTriggered: 0
   detectedSlot: {fileID: 0}
 --- !u!1 &153707153
 GameObject:
@@ -1021,7 +1019,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 217397921}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &217397921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1250,7 +1260,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ed1cf26d4211b4096f581283be7866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTriggered: 0
   detectedSlot: {fileID: 0}
 --- !u!114 &616000998
 MonoBehaviour:
@@ -1342,7 +1351,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 160, y: 200}
+  m_Size: {x: 120, y: 150}
   m_EdgeRadius: 0
 --- !u!114 &616001001
 MonoBehaviour:
@@ -1622,7 +1631,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 160, y: 200}
+  m_Size: {x: 120, y: 150}
   m_EdgeRadius: 0
 --- !u!50 &697303378
 Rigidbody2D:
@@ -1639,7 +1648,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1702,7 +1711,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ed1cf26d4211b4096f581283be7866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTriggered: 0
   detectedSlot: {fileID: 0}
 --- !u!1 &699001045
 GameObject:
@@ -2370,7 +2378,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 160, y: 200}
+  m_Size: {x: 120, y: 150}
   m_EdgeRadius: 0
 --- !u!50 &833384040
 Rigidbody2D:
@@ -2387,7 +2395,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2405,7 +2413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ed1cf26d4211b4096f581283be7866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTriggered: 0
   detectedSlot: {fileID: 0}
 --- !u!114 &833384042
 MonoBehaviour:
@@ -2557,7 +2564,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 160, y: 200}
+  m_Size: {x: 120, y: 150}
   m_EdgeRadius: 0
 --- !u!50 &845976807
 Rigidbody2D:
@@ -2574,7 +2581,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2637,7 +2644,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ed1cf26d4211b4096f581283be7866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTriggered: 0
   detectedSlot: {fileID: 0}
 --- !u!1 &858615220
 GameObject:
@@ -2694,7 +2700,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ed1cf26d4211b4096f581283be7866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTriggered: 0
   detectedSlot: {fileID: 0}
 --- !u!114 &858615223
 MonoBehaviour:
@@ -2786,7 +2791,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 160, y: 200}
+  m_Size: {x: 120, y: 150}
   m_EdgeRadius: 0
 --- !u!114 &858615226
 MonoBehaviour:
@@ -2837,6 +2842,7 @@ GameObject:
   - component: {fileID: 864456053}
   - component: {fileID: 864456055}
   - component: {fileID: 864456054}
+  - component: {fileID: 864456056}
   m_Layer: 5
   m_Name: Cutton
   m_TagString: Untagged
@@ -2857,7 +2863,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1892740232}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2902,6 +2908,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864456052}
   m_CullTransparentMesh: 1
+--- !u!114 &864456056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864456052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 864456052}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &892523195
 GameObject:
   m_ObjectHideFlags: 0
@@ -3024,7 +3059,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ed1cf26d4211b4096f581283be7866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTriggered: 0
   detectedSlot: {fileID: 0}
 --- !u!114 &971743022
 MonoBehaviour:
@@ -3116,7 +3150,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 160, y: 200}
+  m_Size: {x: 120, y: 150}
   m_EdgeRadius: 0
 --- !u!114 &971743025
 MonoBehaviour:
@@ -3438,7 +3472,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 160, y: 200}
+  m_Size: {x: 120, y: 150}
   m_EdgeRadius: 0
 --- !u!50 &1125974309
 Rigidbody2D:
@@ -3455,7 +3489,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -3518,7 +3552,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ed1cf26d4211b4096f581283be7866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTriggered: 0
   detectedSlot: {fileID: 0}
 --- !u!1 &1251884762
 GameObject:
@@ -3575,7 +3608,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ed1cf26d4211b4096f581283be7866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTriggered: 0
   detectedSlot: {fileID: 0}
 --- !u!114 &1251884765
 MonoBehaviour:
@@ -3667,7 +3699,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 160, y: 200}
+  m_Size: {x: 120, y: 150}
   m_EdgeRadius: 0
 --- !u!114 &1251884768
 MonoBehaviour:
@@ -3762,7 +3794,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ed1cf26d4211b4096f581283be7866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTriggered: 0
   detectedSlot: {fileID: 0}
 --- !u!114 &1294603621
 MonoBehaviour:
@@ -3854,7 +3885,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 160, y: 200}
+  m_Size: {x: 120, y: 150}
   m_EdgeRadius: 0
 --- !u!114 &1294603624
 MonoBehaviour:
@@ -4596,7 +4627,7 @@ RectTransform:
   - {fileID: 712886762}
   - {fileID: 996859690}
   m_Father: {fileID: 1892740232}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5353,7 +5384,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ed1cf26d4211b4096f581283be7866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTriggered: 0
   detectedSlot: {fileID: 0}
 --- !u!114 &1748077254
 MonoBehaviour:
@@ -5445,7 +5475,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 160, y: 200}
+  m_Size: {x: 120, y: 150}
   m_EdgeRadius: 0
 --- !u!114 &1748077257
 MonoBehaviour:
@@ -5712,9 +5742,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 864456053}
   - {fileID: 1593348630}
   - {fileID: 2123810390}
+  - {fileID: 864456053}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5940,7 +5970,7 @@ RectTransform:
   - {fileID: 153707154}
   - {fileID: 1397932589}
   m_Father: {fileID: 1892740232}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
