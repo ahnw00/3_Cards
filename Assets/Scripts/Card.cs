@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardDrag : MonoBehaviour
+public class Card : MonoBehaviour
 {
-    public CardDetector detectedSlot;
+    public CardSlot detectedSlot;
 
     public void DragCard()
     {
@@ -13,7 +13,7 @@ public class CardDrag : MonoBehaviour
 
     public void SetCardPos()
     {
-        if(detectedSlot && detectedSlot.isThereCardOnSlot)
+        if(detectedSlot)
         {
             Vector2 slotPos = detectedSlot.GetComponent<RectTransform>().position;
             this.GetComponent<RectTransform>().position = slotPos;
