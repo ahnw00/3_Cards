@@ -1049,6 +1049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 673d492fc80584648bc56f4b196eb80c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardOnSlot: {fileID: 0}
   isThereCardOnSlot: 0
 --- !u!1 &217397918
 GameObject:
@@ -1892,7 +1893,7 @@ GameObject:
   - component: {fileID: 536423984}
   m_Layer: 5
   m_Name: Slot (0)
-  m_TagString: CardSlot
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1929,6 +1930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 673d492fc80584648bc56f4b196eb80c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardOnSlot: {fileID: 0}
   isThereCardOnSlot: 0
 --- !u!61 &536423985
 BoxCollider2D:
@@ -2046,6 +2048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 673d492fc80584648bc56f4b196eb80c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardOnSlot: {fileID: 0}
   isThereCardOnSlot: 0
 --- !u!61 &591007063
 BoxCollider2D:
@@ -3335,7 +3338,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &939674370
 GameObject:
@@ -4218,6 +4221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 673d492fc80584648bc56f4b196eb80c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardOnSlot: {fileID: 0}
   isThereCardOnSlot: 0
 --- !u!1 &1363671965
 GameObject:
@@ -4891,7 +4895,7 @@ GameObject:
   - component: {fileID: 1645285269}
   m_Layer: 5
   m_Name: Slot (0)
-  m_TagString: CardSlot
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4992,6 +4996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 673d492fc80584648bc56f4b196eb80c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardOnSlot: {fileID: 0}
   isThereCardOnSlot: 0
 --- !u!1 &1648741648
 GameObject:
@@ -5450,6 +5455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 673d492fc80584648bc56f4b196eb80c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardOnSlot: {fileID: 0}
   isThereCardOnSlot: 0
 --- !u!61 &1793268752
 BoxCollider2D:
@@ -5881,7 +5887,7 @@ RectTransform:
   - {fileID: 2123810390}
   - {fileID: 864456053}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
