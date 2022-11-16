@@ -5,10 +5,12 @@ using UnityEngine;
 public class Card : MonoBehaviour
 {
     public CardSlot detectedSlot;
+    public int cardNum;
 
-    public void DragCard()
+    public void DragCard(int inputNum)
     {
         this.GetComponent<RectTransform>().position = Input.mousePosition;
+        cardNum = inputNum; // 선택한 카드 번호 넘겨줌
     }
 
     public void SetCardPos()

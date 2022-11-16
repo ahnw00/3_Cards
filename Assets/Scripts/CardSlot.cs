@@ -5,8 +5,8 @@ using UnityEngine;
 public class CardSlot : MonoBehaviour
 {
     [SerializeField] Card cardOnSlot;
+    [HideInInspector] public int slotNum;
     public bool isThereCardOnSlot = false;
-
     void OnTriggerEnter2D(Collider2D col)
     {
         if(!isThereCardOnSlot)
@@ -14,6 +14,7 @@ public class CardSlot : MonoBehaviour
             isThereCardOnSlot = true;
             col.GetComponent<Card>().detectedSlot = this;
             cardOnSlot = col.GetComponent<Card>();
+            slotNum = cardOnSlot.cardNum; // 현재 슬롯에 올라가있는 카드의 번호 저장
         }
     }
 
@@ -23,6 +24,7 @@ public class CardSlot : MonoBehaviour
         {
             isThereCardOnSlot = false;
             col.GetComponent<Card>().detectedSlot = null;
+            slotNum = -1;
             cardOnSlot = null;
         }
     }
