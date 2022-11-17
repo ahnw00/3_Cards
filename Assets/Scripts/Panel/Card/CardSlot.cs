@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class CardSlot : MonoBehaviour
 {
-    [SerializeField] Card cardOnSlot;
+    public Card cardOnSlot;
     [HideInInspector] public int slotNum;
     public bool isThereCardOnSlot = false;
+    
     void OnTriggerEnter2D(Collider2D col) // 카드와 슬롯이 만날 때
     {
         if(!isThereCardOnSlot)

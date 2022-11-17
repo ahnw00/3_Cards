@@ -9,15 +9,30 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager gameManager;
     [HideInInspector] public bool playerArrivedEndPoint = false;
     [HideInInspector] public bool player1Turn = false;
     [HideInInspector] public bool player2Turn = false;
     int round = 0;
-    [SerializeField] Image cuttonImage;
+    public GameObject cutton;
+
+    // void Awake()
+    // {
+    //     if (null == instance)
+    //     {
+    //         instance = this;
+    //         DontDestroyOnLoad(this.gameObject);
+    //     }
+    //     else
+    //     {
+    //         Destroy(this.gameObject);
+    //     }
+    // }
 
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = this;
         StartCoroutine(TurnManager());
         player1Turn = true;
     }
@@ -32,7 +47,7 @@ public class GameManager : MonoBehaviour
                 yield return null;
             }
 
-            cuttonImage.enabled = true;
+            cutton.SetActive(true);
 
             while(player2Turn)
             {
