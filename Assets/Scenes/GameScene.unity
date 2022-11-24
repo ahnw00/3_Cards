@@ -1163,7 +1163,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardOnSlot: {fileID: 0}
-  slotNum: 0
   isThereCardOnSlot: 0
 --- !u!1 &217397918
 GameObject:
@@ -1726,8 +1725,12 @@ MonoBehaviour:
   - {fileID: 591007062}
   - {fileID: 1793268751}
   cardPosX: 
+  p1CardDeck: {fileID: 0}
+  p2CardDeck: {fileID: 0}
   player1Card: 000000000000000000000000
   player2Card: 000000000000000000000000
+  player1Moving: 000000000000000000000000
+  player2Moving: 000000000000000000000000
 --- !u!4 &374822979
 Transform:
   m_ObjectHideFlags: 0
@@ -2618,7 +2621,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardOnSlot: {fileID: 0}
-  slotNum: 0
   isThereCardOnSlot: 0
 --- !u!61 &536423985
 BoxCollider2D:
@@ -2737,7 +2739,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardOnSlot: {fileID: 0}
-  slotNum: 0
   isThereCardOnSlot: 0
 --- !u!61 &591007063
 BoxCollider2D:
@@ -5656,7 +5657,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardOnSlot: {fileID: 0}
-  slotNum: 0
   isThereCardOnSlot: 0
 --- !u!1 &1363671965
 GameObject:
@@ -6460,7 +6460,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardOnSlot: {fileID: 0}
-  slotNum: 0
   isThereCardOnSlot: 0
 --- !u!1 &1648741648
 GameObject:
@@ -7031,7 +7030,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardOnSlot: {fileID: 0}
-  slotNum: 0
   isThereCardOnSlot: 0
 --- !u!61 &1793268752
 BoxCollider2D:
@@ -7628,6 +7626,7 @@ MonoBehaviour:
   playerArrivedEndPoint: 0
   player1Turn: 0
   player2Turn: 0
+  round: 0
   cutton: {fileID: 864456052}
 --- !u!1 &2123810389
 GameObject:

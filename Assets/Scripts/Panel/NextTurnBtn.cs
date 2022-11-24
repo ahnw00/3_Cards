@@ -17,6 +17,15 @@ public class NextTurnBtn : MonoBehaviour
 
     public void ClickNextTurnBtn()
     {
+        /*if(player1Panel.activeSelf)
+        {
+            slotManager.CheckP1SlotNum();
+        }
+        else if(player2Panel.activeSelf)
+        {
+            slotManager.CheckP2SlotNum();
+            slotManager.CompareCardNum();
+        }*/
         player1Panel.SetActive(false);
         player2Panel.SetActive(true);
     }

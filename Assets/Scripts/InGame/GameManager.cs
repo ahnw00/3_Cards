@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool playerArrivedEndPoint = false;
     [HideInInspector] public bool player1Turn = false;
     [HideInInspector] public bool player2Turn = false;
-    int round = 0;
+    [HideInInspector] public int round = 0;
     public GameObject cutton;
 
     // void Awake()
