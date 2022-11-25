@@ -13,13 +13,14 @@ public class SlotManager : MonoBehaviour
     public int[] player1Card; // selected number list of player1
     public int[] player2Card; // selected number list of player2
 
-    public int[] player1Moving = {0, 0, 0};
-    public int[] player2Moving = {0, 0, 0};
+    public int[] player1Moving = {0, 0, 0}; // 승부 판별 결과
+    public int[] player2Moving = {0, 0, 0}; // 승부 판별 결과 안움직인다(0) or 움직인다(1)
 
     void Start()
     {
         slotManager = this;
         gameManager = GameManager.gameManager;
+
         for(int i = 0; i < 3; i++)
         {
             player1Card[i] = -1;
@@ -57,7 +58,7 @@ public class SlotManager : MonoBehaviour
         }
     }
 
-    public void ResetCardDeck()
+    public void ResetCardDeck() // 짝수판 카드 리셋
     {
         if(gameManager.round % 2 == 0)
         {
@@ -65,7 +66,6 @@ public class SlotManager : MonoBehaviour
             {
                 p1CardDeck.transform.GetChild(i).GetComponent<RectTransform>().anchoredPosition = new Vector2(cardPosX[i], 0);
                 p2CardDeck.transform.GetChild(i).GetComponent<RectTransform>().anchoredPosition = new Vector2(cardPosX[i], 0);
-
             }
         }
     }
