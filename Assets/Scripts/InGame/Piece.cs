@@ -4,15 +4,35 @@ using UnityEngine;
 
 public class Piece : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int pieceNum;
+    public Board detectedBoard;
+    public Transform[] boardPos;
+    int boardnum = 0;
+
+    public void MovePiecePos(int moveNum)
     {
-        
+        boardnum += moveNum;
+        IsItEndPoint();
+        transform.position = boardPos[boardnum].transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        transform.position = boardPos[boardnum].transform.position;
     }
+
+    public void IsItEndPoint()
+    {
+        if(boardnum >= 9)
+        {
+            transform.position = boardPos[9].transform.position;
+            Debug.Log("Game End");
+
+        }
+
+    }
+
+
+
+
 }

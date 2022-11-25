@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class Board : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public bool isTherePieceOnBoard = false;
+
+    void OnTriggerEnter2D(Collider2D col)
     {
-        
+        if(!isTherePieceOnBoard)
+        {
+            isTherePieceOnBoard = true;
+            col.GetComponent<Piece>().detectedBoard = this;
+
+
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerExit2D(Collider2D col)
     {
-        
+        if(isTherePieceOnBoard == true)
+        {
+            isTherePieceOnBoard = false;
+            col.GetComponent<Piece>().detectedBoard = null;
+
+    
+        }
     }
+
 }
