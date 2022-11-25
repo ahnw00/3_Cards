@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager gameManager;
+    public static GameManager instance;
     [HideInInspector] public bool playerArrivedEndPoint = false;
     [HideInInspector] public bool player1Turn = false;
     [HideInInspector] public bool player2Turn = false;
@@ -29,10 +29,13 @@ public class GameManager : MonoBehaviour
     //     }
     // }
 
+    void Awake()
+    {
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = this;
         StartCoroutine(TurnManager());
         player1Turn = true;
     }

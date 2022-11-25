@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 123817329}
   m_Layer: 5
   m_Name: Card5
-  m_TagString: Card
+  m_TagString: 5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -681,7 +681,7 @@ GameObject:
   - component: {fileID: 128699310}
   m_Layer: 5
   m_Name: Card1
-  m_TagString: Card
+  m_TagString: 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1163,6 +1163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardOnSlot: {fileID: 0}
+  slotNum: 0
   isThereCardOnSlot: 0
 --- !u!1 &217397918
 GameObject:
@@ -1313,6 +1314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1Panel: {fileID: 1593348629}
   player2Panel: {fileID: 2123810389}
+  slotManager: {fileID: 0}
 --- !u!1 &246860018
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,7 +1332,7 @@ GameObject:
   - component: {fileID: 246860020}
   m_Layer: 5
   m_Name: Card2
-  m_TagString: Card
+  m_TagString: 2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1517,7 +1519,7 @@ GameObject:
   - component: {fileID: 352806219}
   m_Layer: 5
   m_Name: Card5
-  m_TagString: Card
+  m_TagString: 5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2043,7 +2045,7 @@ GameObject:
   - component: {fileID: 400792217}
   m_Layer: 5
   m_Name: Card4
-  m_TagString: Card
+  m_TagString: 4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2516,7 +2518,7 @@ GameObject:
   - component: {fileID: 510928841}
   - component: {fileID: 510928840}
   - component: {fileID: 510928843}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Player1
   m_TagString: Player1
   m_Icon: {fileID: 0}
@@ -2655,7 +2657,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510928838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.61, y: 3.23, z: -1}
+  m_LocalPosition: {x: -2.61, y: 3.23, z: -2}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2826,6 +2828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardOnSlot: {fileID: 0}
+  slotNum: 0
   isThereCardOnSlot: 0
 --- !u!61 &536423985
 BoxCollider2D:
@@ -2944,6 +2947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardOnSlot: {fileID: 0}
+  slotNum: 0
   isThereCardOnSlot: 0
 --- !u!61 &591007063
 BoxCollider2D:
@@ -3160,7 +3164,7 @@ GameObject:
   - component: {fileID: 697303380}
   m_Layer: 5
   m_Name: Card4
-  m_TagString: Card
+  m_TagString: 4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3386,7 +3390,7 @@ GameObject:
   - component: {fileID: 742000086}
   m_Layer: 5
   m_Name: Card3
-  m_TagString: Card
+  m_TagString: 3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3877,7 +3881,7 @@ GameObject:
   - component: {fileID: 833384043}
   m_Layer: 5
   m_Name: Card0
-  m_TagString: Card
+  m_TagString: 0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4064,7 +4068,7 @@ GameObject:
   - component: {fileID: 845976809}
   m_Layer: 5
   m_Name: Card2
-  m_TagString: Card
+  m_TagString: 2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4570,7 +4574,7 @@ GameObject:
   - component: {fileID: 939674372}
   m_Layer: 5
   m_Name: Card1
-  m_TagString: Card
+  m_TagString: 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5046,7 +5050,7 @@ GameObject:
   - component: {fileID: 1125974311}
   m_Layer: 5
   m_Name: Card3
-  m_TagString: Card
+  m_TagString: 3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5529,7 +5533,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272561517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.62, y: 3.27, z: -1}
+  m_LocalPosition: {x: -2.1, y: 4.01, z: -1}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6023,6 +6027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardOnSlot: {fileID: 0}
+  slotNum: 0
   isThereCardOnSlot: 0
 --- !u!1 &1363671965
 GameObject:
@@ -6173,6 +6178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1Panel: {fileID: 0}
   player2Panel: {fileID: 0}
+  slotManager: {fileID: 0}
 --- !u!1 &1400758357
 GameObject:
   m_ObjectHideFlags: 0
@@ -6190,7 +6196,7 @@ GameObject:
   - component: {fileID: 1400758359}
   m_Layer: 5
   m_Name: Card0
-  m_TagString: Card
+  m_TagString: 0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6826,6 +6832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardOnSlot: {fileID: 0}
+  slotNum: 0
   isThereCardOnSlot: 0
 --- !u!1 &1648741648
 GameObject:
@@ -7396,6 +7403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardOnSlot: {fileID: 0}
+  slotNum: 0
   isThereCardOnSlot: 0
 --- !u!61 &1793268752
 BoxCollider2D:

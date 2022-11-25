@@ -6,18 +6,18 @@ public class NextTurnBtn : MonoBehaviour
 {
     GameManager gameManager;
     public GameObject player1Panel, player2Panel;
-    SlotManager slotManager;
+    [SerializeField] SlotManager slotManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameManager.gameManager;
-        slotManager = SlotManager.slotManager;
+        gameManager = GameManager.instance;
+        slotManager = SlotManager.instance;
     }
 
     public void ClickNextTurnBtn()
     {
-        /*if(player1Panel.activeSelf)
+        if(player1Panel.activeSelf)
         {
             slotManager.CheckP1SlotNum();
         }
@@ -25,7 +25,7 @@ public class NextTurnBtn : MonoBehaviour
         {
             slotManager.CheckP2SlotNum();
             slotManager.CompareCardNum();
-        }*/
+        }
         player1Panel.SetActive(false);
         player2Panel.SetActive(true);
     }

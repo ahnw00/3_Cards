@@ -5,7 +5,7 @@ using UnityEngine;
 public class CardSlot : MonoBehaviour
 {
     public Card cardOnSlot;
-    //[HideInInspector] public int slotNum;
+    [HideInInspector] public int slotNum;
     public bool isThereCardOnSlot = false;
     
     void OnTriggerEnter2D(Collider2D col) // 카드와 슬롯이 만날 때
@@ -15,7 +15,7 @@ public class CardSlot : MonoBehaviour
             isThereCardOnSlot = true;
             col.GetComponent<Card>().detectedSlot = this;
             cardOnSlot = col.GetComponent<Card>();
-            //slotNum = cardOnSlot.cardNum; // 현재 슬롯에 올라가있는 카드의 번호 저장
+            slotNum = cardOnSlot.cardNum; // 현재 슬롯에 올라가있는 카드의 번호 저장
         }
     }
 
