@@ -13,12 +13,14 @@ public class Piece : MonoBehaviour
     {
         boardnum += moveNum;
         IsItEndPoint();
-        transform.position = boardPos[boardnum].transform.position;
+        //transform.position = boardPos[boardnum].transform.position;
+        transform.position = new Vector3(boardPos[boardnum].transform.position.x, boardPos[boardnum].transform.position.y, -1);
     }
 
     void Start()
     {
-        transform.position = boardPos[boardnum].transform.position;
+        //transform.position = boardPos[boardnum].transform.position;
+        transform.position = new Vector3(boardPos[boardnum].transform.position.x, boardPos[boardnum].transform.position.y, -1);
     }
 
     public void IsItEndPoint()
