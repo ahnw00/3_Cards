@@ -31,7 +31,7 @@ public class Piece : MonoBehaviour
             Debug.Log("Game End");
 
         }
-
+        //Mathf.Lerp()
     }
 
 
