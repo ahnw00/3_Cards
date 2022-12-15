@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Board : MonoBehaviour
 {
-
+    public Transform[] boardPos;
     public bool isTherePieceOnBoard = false;
 
     void OnTriggerEnter2D(Collider2D col)
@@ -12,7 +12,7 @@ public class Board : MonoBehaviour
         if(!isTherePieceOnBoard)
         {
             isTherePieceOnBoard = true;
-            col.GetComponent<Piece>().detectedBoard = this;
+            //col.GetComponent<Piece>().detectedBoard = this;
 
 
         }
@@ -23,7 +23,7 @@ public class Board : MonoBehaviour
         if(isTherePieceOnBoard == true)
         {
             isTherePieceOnBoard = false;
-            col.GetComponent<Piece>().detectedBoard = null;
+            //col.GetComponent<Piece>().detectedBoard = null;
 
     
         }

@@ -5,20 +5,21 @@ using UnityEngine;
 public class Piece : MonoBehaviour
 {
     public int pieceNum;
-    public Board detectedBoard;
-    public Transform[] boardPos;
+    public Board board;
     int boardnum = 0;
+    Transform[] boardPos;
+
+    void Start()
+    {
+        boardPos = board.boardPos;
+        //transform.position = boardPos[boardnum].transform.position;
+        transform.position = new Vector3(boardPos[boardnum].transform.position.x, boardPos[boardnum].transform.position.y, -1);
+    }
 
     public void MovePiecePos(int moveNum)
     {
         boardnum += moveNum;
         IsItEndPoint();
-        //transform.position = boardPos[boardnum].transform.position;
-        transform.position = new Vector3(boardPos[boardnum].transform.position.x, boardPos[boardnum].transform.position.y, -1);
-    }
-
-    void Start()
-    {
         //transform.position = boardPos[boardnum].transform.position;
         transform.position = new Vector3(boardPos[boardnum].transform.position.x, boardPos[boardnum].transform.position.y, -1);
     }
@@ -33,8 +34,4 @@ public class Piece : MonoBehaviour
         }
         //Mathf.Lerp()
     }
-
-
-
-
 }
