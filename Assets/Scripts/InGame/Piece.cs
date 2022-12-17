@@ -6,32 +6,35 @@ public class Piece : MonoBehaviour
 {
     public int pieceNum;
     public Board board;
-    int boardnum = 0;
+    int boardNum = 0;
     Transform[] boardPos;
+    IEnumerator MoveEffect(int moveNum)
+    {
+        boardPos = board.boardPos;
+        Vector3 NewPos = new Vector3(boardPos[boardNum].transform.position.x,boardPos[boardNum].transform.position.y, -1);
+        Vector3 OriginPos = this.transform.position;
+        while(Vector3.Distance(transform.position,NewPos) > 0.05f )
+        {
+            transform.position = Vector3.Lerp(OriginPos,NewPos,1f);
+            yield return new WaitForSeconds(1f);
+        }
+    }
 
     void Start()
     {
         boardPos = board.boardPos;
-        //transform.position = boardPos[boardnum].transform.position;
-        transform.position = new Vector3(boardPos[boardnum].transform.position.x, boardPos[boardnum].transform.position.y, -1);
+        transform.position = new Vector3(boardPos[boardNum].transform.position.x, boardPos[boardNum].transform.position.y, -1);
     }
 
     public void MovePiecePos(int moveNum)
     {
-        boardnum += moveNum;
-        IsItEndPoint();
-        //transform.position = boardPos[boardnum].transform.position;
-        transform.position = new Vector3(boardPos[boardnum].transform.position.x, boardPos[boardnum].transform.position.y, -1);
-    }
-
-    public void IsItEndPoint()
-    {
-        if(boardnum >= 9)
+        boardNum += moveNum;
+        if(boardNum >= 11)
         {
-            transform.position = boardPos[9].transform.position;
+            boardNum = 11;
             Debug.Log("Game End");
-
         }
-        //Mathf.Lerp()
+        StartCoroutine(MoveEffect(moveNum));
+
     }
 }
