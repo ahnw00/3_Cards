@@ -2356,7 +2356,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0.5}
+    pivot: {x: 0.5, y: 1}
     oldSize: {x: 1.85, y: 3.31}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -2431,7 +2431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieceNum: 0
-  board: {fileID: 0}
+  board: {fileID: 1057711608}
 --- !u!4 &510928844
 Transform:
   m_ObjectHideFlags: 0
@@ -2440,8 +2440,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510928838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.19, y: 3.05, z: -2}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: -5.07, y: 2.21, z: -2}
+  m_LocalScale: {x: 0.44486132, y: 0.1819972, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 860480497}
@@ -4513,6 +4513,7 @@ GameObject:
   - component: {fileID: 1057711602}
   - component: {fileID: 1057711606}
   - component: {fileID: 1057711607}
+  - component: {fileID: 1057711608}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -4625,6 +4626,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.031487, y: 1.07}
   m_EdgeRadius: 0
+--- !u!114 &1057711608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057711601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6075046b863f0b74eb2cf1ed2710e905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boardPos:
+  - {fileID: 701893254}
+  - {fileID: 780239568}
+  - {fileID: 307000130}
+  - {fileID: 404397052}
+  - {fileID: 404150809}
+  - {fileID: 631454294}
+  - {fileID: 686053151}
+  - {fileID: 1832760880}
+  - {fileID: 2074661894}
+  - {fileID: 1704790774}
+  - {fileID: 530268391}
+  - {fileID: 95581730}
+  isTherePieceOnBoard: 0
 --- !u!1 &1074992470
 GameObject:
   m_ObjectHideFlags: 0
@@ -5056,8 +5083,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272561517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.82, y: 3.83, z: -1}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: -6.32, y: 4.35, z: -1}
+  m_LocalScale: {x: 0.41764003, y: 0.19296001, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 860480497}
@@ -5100,7 +5127,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 1, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 1.97, y: 3.4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -5174,8 +5201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae7a1fc6f39803b43b60e6da14376d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pieceNum: 0
-  board: {fileID: 0}
+  pieceNum: 1
+  board: {fileID: 1057711608}
 --- !u!1 &1318723460
 GameObject:
   m_ObjectHideFlags: 0
