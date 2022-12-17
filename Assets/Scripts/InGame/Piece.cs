@@ -8,22 +8,25 @@ public class Piece : MonoBehaviour
     public Board board;
     int boardNum = 0;
     Transform[] boardPos;
-    IEnumerator MoveEffect(int moveNum)
-    {
-        boardPos = board.boardPos;
-        Vector3 NewPos = new Vector3(boardPos[boardNum].transform.position.x,boardPos[boardNum].transform.position.y, -1);
-        Vector3 OriginPos = this.transform.position;
-        while(Vector3.Distance(transform.position,NewPos) > 0.05f )
-        {
-            transform.position = Vector3.Lerp(OriginPos,NewPos,1f);
-            yield return new WaitForSeconds(1f);
-        }
-    }
-
+    
     void Start()
     {
         boardPos = board.boardPos;
         transform.position = new Vector3(boardPos[boardNum].transform.position.x, boardPos[boardNum].transform.position.y, -1);
+    }
+
+    IEnumerator MoveCoroutine()
+    {
+        Vector3 NewPos = new Vector3(boardPos[boardNum].transform.position.x,boardPos[boardNum].transform.position.y, -1);
+        float time = 0;
+        float speed = 0.3f;
+        while(Vector2.Distance(transform.position, NewPos) > 0.01f)
+        {
+            time += Time.deltaTime * speed;
+            transform.position = Vector3.Lerp(transform.position, NewPos, time);
+            yield return null;
+        }
+        transform.position = NewPos;
     }
 
     public void MovePiecePos(int moveNum)
@@ -34,7 +37,6 @@ public class Piece : MonoBehaviour
             boardNum = 11;
             Debug.Log("Game End");
         }
-        StartCoroutine(MoveEffect(moveNum));
-
+        StartCoroutine(MoveCoroutine());
     }
 }
