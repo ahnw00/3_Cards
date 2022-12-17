@@ -898,7 +898,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &189885460
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1174,6 +1174,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: NextTurnBtn, Assembly-CSharp
         m_MethodName: ClickNextTurnBtn
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1593348629}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1818,6 +1830,8 @@ MonoBehaviour:
   cardPosX: 
   p1CardDeck: {fileID: 996859689}
   p2CardDeck: {fileID: 1074992470}
+  p1Piece: {fileID: 510928843}
+  p2Piece: {fileID: 1272561522}
   player1Card: 000000000000000000000000
   player2Card: 000000000000000000000000
   player1Moving: 000000000000000000000000
@@ -1866,10 +1880,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 105941696}
-  - {fileID: 810293745}
   - {fileID: 860480497}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &400792215
 GameObject:
@@ -2431,6 +2444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieceNum: 0
+  runningOnCoroutine: 0
   board: {fileID: 1057711608}
 --- !u!4 &510928844
 Transform:
@@ -3680,16 +3694,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810293744}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.5129049, y: 0.33296365, z: -0.11386563}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2008680197}
   - {fileID: 374822979}
   - {fileID: 485770017}
-  m_Father: {fileID: 389350886}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &833384035
 GameObject:
@@ -4098,7 +4112,7 @@ Transform:
   - {fileID: 510928844}
   - {fileID: 1272561518}
   m_Father: {fileID: 389350886}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &864456052
 GameObject:
@@ -4112,6 +4126,7 @@ GameObject:
   - component: {fileID: 864456055}
   - component: {fileID: 864456054}
   - component: {fileID: 864456056}
+  - component: {fileID: 864456057}
   m_Layer: 5
   m_Name: Cutton
   m_TagString: Untagged
@@ -4206,6 +4221,30 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 864456057}
+          m_TargetAssemblyTypeName: Cutton, Assembly-CSharp
+          m_MethodName: ChangeTurn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &864456057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864456052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04b724895de3814e9963c32a40a2a0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &892523195
 GameObject:
   m_ObjectHideFlags: 0
@@ -4271,7 +4310,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &939674370
 GameObject:
@@ -5202,6 +5241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieceNum: 1
+  runningOnCoroutine: 0
   board: {fileID: 1057711608}
 --- !u!1 &1318723460
 GameObject:
@@ -5544,8 +5584,20 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1363671970}
         m_TargetAssemblyTypeName: NextTurnBtn, Assembly-CSharp
-        m_MethodName: TestBtn
+        m_MethodName: ClickNextTurnBtn
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2123810389}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5604,12 +5656,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9f6dc7f7add9d64bb1078a317eec68a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1Panel: {fileID: 0}
-  player2Panel: {fileID: 0}
+  player1Panel: {fileID: 1593348629}
+  player2Panel: {fileID: 2123810389}
   slot0: 0
   slot1: 0
   slot2: 0
-  slotManager: {fileID: 0}
+  slotManager: {fileID: 374822978}
 --- !u!1 &1400758357
 GameObject:
   m_ObjectHideFlags: 0
@@ -6084,7 +6136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1593348630
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7218,7 +7270,7 @@ RectTransform:
   - {fileID: 864456053}
   - {fileID: 610513762}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7272,8 +7324,13 @@ MonoBehaviour:
   playerArrivedEndPoint: 0
   player1Turn: 0
   player2Turn: 0
+  p1Piece: {fileID: 510928843}
+  p2Piece: {fileID: 1272561522}
+  showingResult: 0
   round: 0
   cutton: {fileID: 864456052}
+  player1Panel: {fileID: 1593348629}
+  player2Panel: {fileID: 2123810389}
 --- !u!1 &2074661893
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ public class SlotManager : MonoBehaviour
     public CardSlot[] player1CardSlots, player2CardSlots; //cardslot for each player.
     [HideInInspector] public int[] cardPosX = {-625, -375, -125, 125, 375, 625};
     [SerializeField] GameObject p1CardDeck, p2CardDeck;
+    [SerializeField] Piece p1Piece, p2Piece;
     public int[] player1Card; // selected number list of player1
     public int[] player2Card; // selected number list of player2
 
@@ -33,7 +34,8 @@ public class SlotManager : MonoBehaviour
 
     public void CheckP1SlotNum() 
     {// if you click nextTurn Btn of player 1 panel, excute this func
-        for(int i = 0; i < player1CardSlots.Length; i++){
+        for(int i = 0; i < player1CardSlots.Length; i++)
+        {
             //player1Card[i] = player1CardSlots[i].cardOnSlot.cardNum;
             player1Card[i] = player1CardSlots[i].slotNum;
             //Debug.Log(player1CardSlots[i].cardOnSlot.name);
@@ -52,13 +54,24 @@ public class SlotManager : MonoBehaviour
         {
             if(player1Card[i] > player2Card[i])
             {
-                player1Moving[i] = 1;
+                p1Piece.boardNum++;
+                if(p1Piece.boardNum > 11)
+                {
+                    p1Piece.boardNum = 11;
+                }
             }
+            
             else if(player1Card[i] < player2Card[i])
             {
-                player2Moving[i] = 1;
+                p2Piece.boardNum++;
+                if(p2Piece.boardNum > 11)
+                {
+                    p2Piece.boardNum = 11;
+                }
             }
         }
+        StartCoroutine(p1Piece.MoveCoroutine());
+        StartCoroutine(p2Piece.MoveCoroutine());
     }
 
     public void ResetCardDeck() // 짝수판 카드 리셋

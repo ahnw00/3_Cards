@@ -10,24 +10,13 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    [HideInInspector] public bool playerArrivedEndPoint = false;
-    [HideInInspector] public bool player1Turn = false;
-    [HideInInspector] public bool player2Turn = false;
+    SlotManager slotManager;
+    [HideInInspector] public bool player1Turn, player2Turn = false;
+    [SerializeField] Piece p1Piece, p2Piece;
+    public bool showingResult = false;
     [HideInInspector] public int round = 0;
     public GameObject cutton;
-
-    // void Awake()
-    // {
-    //     if (null == instance)
-    //     {
-    //         instance = this;
-    //         DontDestroyOnLoad(this.gameObject);
-    //     }
-    //     else
-    //     {
-    //         Destroy(this.gameObject);
-    //     }
-    // }
+    public GameObject player1Panel, player2Panel;
 
     void Awake()
     {
@@ -36,26 +25,49 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        slotManager = SlotManager.instance;
         StartCoroutine(TurnManager());
         player1Turn = true;
     }
 
     IEnumerator TurnManager()
     {
-        yield return null;
-        while(!playerArrivedEndPoint)
+        while(true)
         {
+            yield return null;
+
+            round++;
+
+            while(showingResult)
+            {
+                yield return new WaitForSeconds(4f);
+                if(!p1Piece.runningOnCoroutine && !p2Piece.runningOnCoroutine)
+                {
+                    player1Turn = true;
+                    showingResult = false;
+                    break;
+                }
+            }
+
+            if(p1Piece.boardNum == 11 || p2Piece.boardNum == 11)
+            {
+                break;
+            }
+            
+            cutton.SetActive(true);
+
             while(player1Turn)
             {
                 yield return null;
             }
-
+            player2Turn = true;
             cutton.SetActive(true);
 
             while(player2Turn)
             {
                 yield return null;
             }
+            cutton.SetActive(true);
         }
     }
 }

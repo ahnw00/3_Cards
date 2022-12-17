@@ -27,14 +27,14 @@ public class NextTurnBtn : MonoBehaviour
             if(player1Panel.activeSelf)
             {
                 slotManager.CheckP1SlotNum();
+                gameManager.player1Turn = false;
             }
             else if(player2Panel.activeSelf)
             {
                 slotManager.CheckP2SlotNum();
-                slotManager.CompareCardNum();
+                gameManager.player2Turn = false;
+                gameManager.showingResult = true;
             }
-            player1Panel.SetActive(false);
-            player2Panel.SetActive(true);
         }
     }
 

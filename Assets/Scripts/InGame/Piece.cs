@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class Piece : MonoBehaviour
 {
+    GameManager gameManager;
     public int pieceNum;
+    public bool runningOnCoroutine = false;
     public Board board;
-    int boardNum = 0;
+    public int boardNum = 0;
     Transform[] boardPos;
     
     void Start()
     {
+        gameManager = GameManager.instance;
         boardPos = board.boardPos;
         transform.position = new Vector3(boardPos[boardNum].transform.position.x, boardPos[boardNum].transform.position.y, -1);
     }
 
-    IEnumerator MoveCoroutine()
+    public IEnumerator MoveCoroutine()
     {
+        runningOnCoroutine = true;
         Vector3 NewPos = new Vector3(boardPos[boardNum].transform.position.x,boardPos[boardNum].transform.position.y, -1);
         float time = 0;
         float speed = 0.3f;
@@ -27,6 +31,7 @@ public class Piece : MonoBehaviour
             yield return null;
         }
         transform.position = NewPos;
+        runningOnCoroutine = false;
     }
 
     public void MovePiecePos(int moveNum)
