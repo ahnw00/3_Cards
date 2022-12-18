@@ -2446,6 +2446,7 @@ MonoBehaviour:
   pieceNum: 0
   runningOnCoroutine: 0
   board: {fileID: 1057711608}
+  boardNum: 0
 --- !u!4 &510928844
 Transform:
   m_ObjectHideFlags: 0
@@ -5243,6 +5244,7 @@ MonoBehaviour:
   pieceNum: 1
   runningOnCoroutine: 0
   board: {fileID: 1057711608}
+  boardNum: 0
 --- !u!1 &1318723460
 GameObject:
   m_ObjectHideFlags: 0
@@ -7321,7 +7323,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e9bce290dd2234eae0a8ab05d13fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerArrivedEndPoint: 0
   player1Turn: 0
   player2Turn: 0
   p1Piece: {fileID: 510928843}
