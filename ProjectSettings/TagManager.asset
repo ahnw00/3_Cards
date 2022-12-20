@@ -13,6 +13,8 @@ TagManager:
   - 3
   - 4
   - 5
+  - minusboard
+  - plusboard
   layers:
   - Default
   - TransparentFX
