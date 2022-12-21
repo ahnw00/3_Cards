@@ -1063,12 +1063,6 @@ MonoBehaviour:
   slot0: 0
   slot1: 0
   slot2: 0
-  Player1slot0Num: 0
-  Player1slot1Num: 0
-  Player1slot2Num: 0
-  Player2slot0Num: 0
-  Player2slot1Num: 0
-  Player2slot2Num: 0
   slotManager: {fileID: 0}
   player1CardDeck:
   - {fileID: 833384035}
@@ -1077,6 +1071,7 @@ MonoBehaviour:
   - {fileID: 1125974304}
   - {fileID: 697303373}
   - {fileID: 123817322}
+  player2CardDeck: []
 --- !u!1 &246860018
 GameObject:
   m_ObjectHideFlags: 0
@@ -4527,14 +4522,15 @@ MonoBehaviour:
   slot0: 0
   slot1: 0
   slot2: 0
-  Player1slot0Num: 0
-  Player1slot1Num: 0
-  Player1slot2Num: 0
-  Player2slot0Num: 0
-  Player2slot1Num: 0
-  Player2slot2Num: 0
   slotManager: {fileID: 374822978}
   player1CardDeck: []
+  player2CardDeck:
+  - {fileID: 1400758357}
+  - {fileID: 939674370}
+  - {fileID: 246860018}
+  - {fileID: 742000084}
+  - {fileID: 400792215}
+  - {fileID: 352806217}
 --- !u!1 &1400758357
 GameObject:
   m_ObjectHideFlags: 0
