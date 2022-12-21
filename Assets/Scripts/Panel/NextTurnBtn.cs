@@ -29,6 +29,7 @@ public class NextTurnBtn : MonoBehaviour
             {
                 slotManager.CheckP1SlotNum();
                 gameManager.player1Turn = false;
+                player1Panel.SetActive(false);
                 Player1slot0Num = GameObject.Find("Slot (0)").GetComponent<CardSlot>().slotNum;
                 Player1slot1Num = GameObject.Find("Slot (1)").GetComponent<CardSlot>().slotNum;
                 Player1slot2Num = GameObject.Find("Slot (2)").GetComponent<CardSlot>().slotNum;
@@ -42,6 +43,7 @@ public class NextTurnBtn : MonoBehaviour
                 slotManager.CheckP2SlotNum();
                 gameManager.player2Turn = false;
                 gameManager.showingResult = true;
+                player2Panel.SetActive(false);
                 Player2slot0Num = GameObject.Find("Slot (0)").GetComponent<CardSlot>().slotNum;
                 Player2slot1Num = GameObject.Find("Slot (1)").GetComponent<CardSlot>().slotNum;
                 Player2slot2Num = GameObject.Find("Slot (2)").GetComponent<CardSlot>().slotNum;
@@ -51,6 +53,12 @@ public class NextTurnBtn : MonoBehaviour
             }
         }
 
+    }
+
+    void SetOffCard(int slotNumber, string slot, string panel)
+    {
+        slotNumber = GameObject.Find(slot).GetComponent<CardSlot>().slotNum;
+        GameObject.Find(panel).transform.GetChild(slotNumber).gameObject.SetActive(false);
     }
 
     public void TestBtn() // for slotManger func test. do not discard
