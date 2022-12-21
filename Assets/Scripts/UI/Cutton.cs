@@ -23,10 +23,12 @@ public class Cutton : MonoBehaviour
         if(gameManager.player1Turn && !gameManager.showingResult)
         {
             player1Panel.SetActive(true);
+            slotManager.ResetCard1Deck();
         }
         else if(gameManager.player2Turn)
         {
             player2Panel.SetActive(true);
+            slotManager.ResetCard2Deck();
         }
         else if(gameManager.showingResult)
         {

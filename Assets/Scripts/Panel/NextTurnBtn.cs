@@ -61,6 +61,7 @@ public class NextTurnBtn : MonoBehaviour
                 gameManager.showingResult = true;
                 player2Panel.SetActive(false);
             }
+            
         }
 
     }

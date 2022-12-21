@@ -1512,7 +1512,7 @@ MonoBehaviour:
   - {fileID: 536423984}
   - {fileID: 591007062}
   - {fileID: 1793268751}
-  cardPosX: 
+  cardPosX: 8ffdffff89feffff83ffffff7d0000007701000071020000
   p1CardDeck: {fileID: 996859689}
   p2CardDeck: {fileID: 1074992470}
   p1Piece: {fileID: 510928843}
@@ -1521,6 +1521,20 @@ MonoBehaviour:
   player2Card: 000000000000000000000000
   player1Moving: 000000000000000000000000
   player2Moving: 000000000000000000000000
+  p1:
+  - {fileID: 833384035}
+  - {fileID: 128699303}
+  - {fileID: 845976802}
+  - {fileID: 1125974304}
+  - {fileID: 697303373}
+  - {fileID: 123817322}
+  p2:
+  - {fileID: 1400758357}
+  - {fileID: 939674370}
+  - {fileID: 246860018}
+  - {fileID: 742000084}
+  - {fileID: 400792215}
+  - {fileID: 352806217}
 --- !u!4 &374822979
 Transform:
   m_ObjectHideFlags: 0
@@ -2004,7 +2018,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510928838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.16, y: 3.12, z: -2}
+  m_LocalPosition: {x: -6.16, y: 3.12, z: -1}
   m_LocalScale: {x: 0.44486132, y: 0.1819972, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []

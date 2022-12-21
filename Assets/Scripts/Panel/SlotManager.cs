@@ -8,7 +8,7 @@ public class SlotManager : MonoBehaviour
     GameManager gameManager;
     public static SlotManager instance;
     public CardSlot[] player1CardSlots, player2CardSlots; //cardslot for each player.
-    [HideInInspector] public int[] cardPosX = {-625, -375, -125, 125, 375, 625};
+    public int[] cardPosX; // card들의 x좌표값 저장
     [SerializeField] GameObject p1CardDeck, p2CardDeck;
     [SerializeField] Piece p1Piece, p2Piece;
     public int[] player1Card; // selected number list of player1
@@ -16,6 +16,8 @@ public class SlotManager : MonoBehaviour
 
     public int[] player1Moving = {0, 0, 0}; // 승부 판별 결과
     public int[] player2Moving = {0, 0, 0}; // 승부 판별 결과 안움직인다(0) or 움직인다(1)
+
+    public GameObject[] p1, p2;
 
     void Awake()
     {
@@ -72,14 +74,25 @@ public class SlotManager : MonoBehaviour
         StartCoroutine(p2Piece.MoveCoroutine());
     }
 
-    public void ResetCardDeck() // 짝수판 카드 리셋
+    public void ResetCard1Deck() // 텍1 카드 리셋
     {
-        if(gameManager.round % 2 == 0)
+        if(gameManager.round % 2 != 0)
         {
-            for(int i = 0; i < 6; i++)
+            for(int i = 0; i < p1.Length; i++)
             {
-                p1CardDeck.transform.GetChild(i).GetComponent<RectTransform>().anchoredPosition = new Vector2(cardPosX[i], 0);
-                p2CardDeck.transform.GetChild(i).GetComponent<RectTransform>().anchoredPosition = new Vector2(cardPosX[i], 0);
+                p1[i].SetActive(true);
+                p1[i].GetComponent<RectTransform>().anchoredPosition = new Vector2(cardPosX[i], 0);
+            }
+        }
+    }
+    public void ResetCard2Deck() // 덱2 카드 리셋
+    {
+        if(gameManager.round % 2 != 0)
+        {
+            for(int i = 0; i < p2.Length; i++)
+            {
+                p2[i].SetActive(true);
+                p2[i].GetComponent<RectTransform>().anchoredPosition = new Vector2(cardPosX[i], 0);
             }
         }
     }
