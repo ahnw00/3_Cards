@@ -36,9 +36,7 @@ public class SlotManager : MonoBehaviour
     {// if you click nextTurn Btn of player 1 panel, excute this func
         for(int i = 0; i < player1CardSlots.Length; i++)
         {
-            //player1Card[i] = player1CardSlots[i].cardOnSlot.cardNum;
             player1Card[i] = player1CardSlots[i].slotNum;
-            //Debug.Log(player1CardSlots[i].cardOnSlot.name);
         }
         
     }

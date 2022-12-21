@@ -1070,6 +1070,13 @@ MonoBehaviour:
   Player2slot1Num: 0
   Player2slot2Num: 0
   slotManager: {fileID: 0}
+  player1CardDeck:
+  - {fileID: 833384035}
+  - {fileID: 128699303}
+  - {fileID: 845976802}
+  - {fileID: 1125974304}
+  - {fileID: 697303373}
+  - {fileID: 123817322}
 --- !u!1 &246860018
 GameObject:
   m_ObjectHideFlags: 0
@@ -4527,6 +4534,7 @@ MonoBehaviour:
   Player2slot1Num: 0
   Player2slot2Num: 0
   slotManager: {fileID: 374822978}
+  player1CardDeck: []
 --- !u!1 &1400758357
 GameObject:
   m_ObjectHideFlags: 0
