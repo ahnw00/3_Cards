@@ -15,13 +15,13 @@ public class Piece : MonoBehaviour
     {
         gameManager = GameManager.instance;
         boardPos = board.boardPos;
-        transform.position = new Vector3(boardPos[boardNum].transform.position.x, boardPos[boardNum].transform.position.y, -1);
+        transform.position = new Vector3(boardPos[boardNum].transform.position.x, this.transform.position.y, -1);
     }
 
     public IEnumerator MoveCoroutine()
     {
         runningOnCoroutine = true;
-        Vector3 NewPos = new Vector3(boardPos[boardNum].transform.position.x,boardPos[boardNum].transform.position.y, -1);
+        Vector3 NewPos = new Vector3(boardPos[boardNum].transform.position.x, this.transform.position.y, -1);
         float time = 0;
         float speed = 0.3f;
         while(Vector2.Distance(transform.position, NewPos) > 0.01f)
