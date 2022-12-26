@@ -10,14 +10,12 @@ public class FootBoard : MonoBehaviour
     int plusBoardNum = 0;
     int minusBoardNum = 0; 
 
-
     void Start()
     {
-
         GameObject plusBoard = GameObject.FindWithTag("plusboard");
         GameObject minusBoard = GameObject.FindWithTag("minusboard");
-        int plusBoardNum = (int)Random.Range(1, 10);
-        int minusBoardNum = (int)Random.Range(1, 10);
+        plusBoardNum = (int)Random.Range(1, 10);
+        minusBoardNum = (int)Random.Range(1, 10);
         while(plusBoardNum == minusBoardNum)
         {
             minusBoardNum = (int)Random.Range(1, 10);
@@ -29,7 +27,8 @@ public class FootBoard : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log(col.gameObject.name);
+        Debug.Log(plusBoardNum);
+        Debug.Log(col.GetComponent<Piece>().boardNum);
         if(plusBoardNum == col.GetComponent<Piece>().boardNum)
         {
             col.GetComponent<Piece>().boardNum += 1;

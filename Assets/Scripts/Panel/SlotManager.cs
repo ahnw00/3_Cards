@@ -71,6 +71,7 @@ public class SlotManager : MonoBehaviour
             }
         }
 
+        ///////////////////////선공 후공 조건
         StartCoroutine(Delay(p1Piece.MoveCoroutine(), p2Piece.MoveCoroutine()));
     }
 
