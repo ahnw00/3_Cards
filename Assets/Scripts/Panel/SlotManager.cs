@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SlotManager : MonoBehaviour
 {
-    GameManager gameManager;
+    InGameManager inGameManager;
     public static SlotManager instance;
     public CardSlot[] player1CardSlots, player2CardSlots; //cardslot for each player.
     public int[] cardPosX; // card들의 x좌표값 저장
@@ -25,7 +25,7 @@ public class SlotManager : MonoBehaviour
     }
     void Start()
     {
-        gameManager = GameManager.instance;
+        inGameManager = InGameManager.instance;
 
         for(int i = 0; i < 3; i++)
         {
@@ -70,13 +70,19 @@ public class SlotManager : MonoBehaviour
                 }
             }
         }
-        StartCoroutine(p1Piece.MoveCoroutine());
-        StartCoroutine(p2Piece.MoveCoroutine());
+
+        StartCoroutine(Delay(p1Piece.MoveCoroutine(), p2Piece.MoveCoroutine()));
+    }
+
+    IEnumerator Delay(IEnumerator coroutine1, IEnumerator coroutine2)
+    {
+        yield return StartCoroutine(coroutine1);
+        yield return StartCoroutine(coroutine2);
     }
 
     public void ResetCard1Deck() // 텍1 카드 리셋
     {
-        if(gameManager.round % 2 != 0)
+        if(inGameManager.round % 2 != 0)
         {
             for(int i = 0; i < p1.Length; i++)
             {
@@ -87,7 +93,7 @@ public class SlotManager : MonoBehaviour
     }
     public void ResetCard2Deck() // 덱2 카드 리셋
     {
-        if(gameManager.round % 2 != 0)
+        if(inGameManager.round % 2 != 0)
         {
             for(int i = 0; i < p2.Length; i++)
             {

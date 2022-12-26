@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Piece : MonoBehaviour
 {
-    GameManager gameManager;
+    InGameManager inGameManager;
     public int pieceNum;
     public bool runningOnCoroutine = false;
     public Board board;
@@ -13,7 +13,7 @@ public class Piece : MonoBehaviour
     
     void Start()
     {
-        gameManager = GameManager.instance;
+        inGameManager = InGameManager.instance;
         boardPos = board.boardPos;
         transform.position = new Vector3(boardPos[boardNum].transform.position.x, this.transform.position.y, -1);
     }

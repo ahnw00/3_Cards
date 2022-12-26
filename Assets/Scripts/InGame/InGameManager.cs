@@ -1,15 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-// 게임 플로우 관리
-// 슬롯 리스트 관리
-// 승부 판별
-
-public class GameManager : MonoBehaviour
+public class InGameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static InGameManager instance;
     SlotManager slotManager;
     [HideInInspector] public bool player1Turn, player2Turn = false;
     [SerializeField] Piece p1Piece, p2Piece;

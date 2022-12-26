@@ -5,7 +5,7 @@ using System;
 
 public class NextTurnBtn : MonoBehaviour
 {
-    GameManager gameManager;
+    InGameManager inGameManager;
     public GameObject player1Panel, player2Panel;
     [SerializeField] bool slot0, slot1, slot2;
     [SerializeField] SlotManager slotManager;
@@ -14,7 +14,7 @@ public class NextTurnBtn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameManager.instance;
+        inGameManager = InGameManager.instance;
         slotManager = SlotManager.instance;
     }
 
@@ -40,7 +40,7 @@ public class NextTurnBtn : MonoBehaviour
                         player1CardDeck[i].SetActive(false); // 해당카드 꺼줌
                     }
                 }
-                gameManager.player1Turn = false;
+                inGameManager.player1Turn = false;
                 player1Panel.SetActive(false);
             }
             else if(player2Panel.activeSelf)
@@ -57,8 +57,8 @@ public class NextTurnBtn : MonoBehaviour
                         player2CardDeck[i].SetActive(false); // 해당카드 꺼줌
                     }
                 }
-                gameManager.player2Turn = false;
-                gameManager.showingResult = true;
+                inGameManager.player2Turn = false;
+                inGameManager.showingResult = true;
                 player2Panel.SetActive(false);
             }
             

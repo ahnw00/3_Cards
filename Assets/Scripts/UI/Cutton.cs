@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cutton : MonoBehaviour
 {
-    GameManager gameManager;
+    InGameManager inGameManager;
     SlotManager slotManager;
     GameObject player1Panel;
     GameObject player2Panel;
@@ -12,25 +12,25 @@ public class Cutton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameManager.instance;
+        inGameManager = InGameManager.instance;
         slotManager = SlotManager.instance;
-        player1Panel = gameManager.player1Panel;
-        player2Panel = gameManager.player2Panel;
+        player1Panel = inGameManager.player1Panel;
+        player2Panel = inGameManager.player2Panel;
     }
 
     public void ChangeTurn()
     {
-        if(gameManager.player1Turn && !gameManager.showingResult)
+        if(inGameManager.player1Turn && !inGameManager.showingResult)
         {
             player1Panel.SetActive(true);
             slotManager.ResetCard1Deck();
         }
-        else if(gameManager.player2Turn)
+        else if(inGameManager.player2Turn)
         {
             player2Panel.SetActive(true);
             slotManager.ResetCard2Deck();
         }
-        else if(gameManager.showingResult)
+        else if(inGameManager.showingResult)
         {
             slotManager.CompareCardNum();
         }
