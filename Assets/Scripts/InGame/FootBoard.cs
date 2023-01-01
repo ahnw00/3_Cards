@@ -1,43 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class FootBoard : MonoBehaviour
 {
-    public Board board;
-
-    Transform[] boardPos;
-    int plusBoardNum = 0;
-    int minusBoardNum = 0; 
-
-    void Start()
+    
+    public IEnumerator FadeOut()
     {
-        GameObject plusBoard = GameObject.FindWithTag("plusboard");
-        GameObject minusBoard = GameObject.FindWithTag("minusboard");
-        plusBoardNum = (int)Random.Range(1, 10);
-        minusBoardNum = (int)Random.Range(1, 10);
-        while(plusBoardNum == minusBoardNum)
+        float alpha = 0.0f;
+        while(alpha < 1)
         {
-            minusBoardNum = (int)Random.Range(1, 10);
+            alpha += 0.02f;
+            this.gameObject.GetComponent<Image>().color = new Color(0,0,0,alpha);
+            yield return new WaitForSeconds(0.01f);
         }
-        boardPos = board.boardPos;
-        plusBoard.transform.position = new Vector3(boardPos[plusBoardNum].transform.position.x, boardPos[plusBoardNum].transform.position.y, -1);
-        minusBoard.transform.position = new Vector3(boardPos[minusBoardNum].transform.position.x, boardPos[minusBoardNum].transform.position.y, -1);
+        this.gameObject.SetActive(false);
+
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log(plusBoardNum);
-        Debug.Log(col.GetComponent<Piece>().boardNum);
-        if(plusBoardNum == col.GetComponent<Piece>().boardNum)
+        Debug.Log(col.GetComponent<Board>().plusBoardNum);
+        Debug.Log(col.GetComponent<Piece>().boardNum); 
+        if(col.GetComponent<Board>().plusBoardNum == col.GetComponent<Piece>().boardNum)
         {
             col.GetComponent<Piece>().boardNum += 1;
             col.GetComponent<Piece>().StartCoroutine(col.GetComponent<Piece>().MoveCoroutine());
         }
-        else if(minusBoardNum == col.GetComponent<Piece>().boardNum)
+        else if(col.GetComponent<Board>().minusBoardNum == col.GetComponent<Piece>().boardNum)
         {
-
+            col.GetComponent<Piece>().boardNum -= 1;
+            col.GetComponent<Piece>().StartCoroutine(col.GetComponent<Piece>().MoveCoroutine());
         }
+        StartCoroutine(FadeOut()); 
     }
 
 }
