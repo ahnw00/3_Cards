@@ -6,6 +6,7 @@ public class InGameManager : MonoBehaviour
 {
     public static InGameManager instance;
     SlotManager slotManager;
+    GameManager gameManager;
     [HideInInspector] public bool player1Turn, player2Turn = false;
     [SerializeField] Piece p1Piece, p2Piece;
     public bool showingResult = false;
@@ -21,8 +22,20 @@ public class InGameManager : MonoBehaviour
     void Start()
     {
         slotManager = SlotManager.instance;
+        gameManager = GameManager.instance;
         StartCoroutine(TurnManager());
         player1Turn = true;
+
+        if(gameManager.firstChange)
+        {
+            p1Piece.boardNum++;
+            p1Piece.StartCoroutine(p1Piece.MoveCoroutine());
+        }
+        else
+        {
+            p2Piece.boardNum++;
+            p2Piece.StartCoroutine(p2Piece.MoveCoroutine());
+        }
     }
 
     IEnumerator TurnManager()

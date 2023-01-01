@@ -378,6 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e9bce290dd2234eae0a8ab05d13fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstChange: 0
 --- !u!1 &193660975
 GameObject:
   m_ObjectHideFlags: 0
@@ -2391,6 +2392,7 @@ GameObject:
   - component: {fileID: 1865934741}
   - component: {fileID: 1865934740}
   - component: {fileID: 1865934739}
+  - component: {fileID: 1865934742}
   m_Layer: 5
   m_Name: FirstChangeBtn
   m_TagString: Untagged
@@ -2462,7 +2464,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1865934740}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1865934742}
+        m_TargetAssemblyTypeName: PlayerOrder, Assembly-CSharp
+        m_MethodName: ChangeOrder
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1865934740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2501,6 +2515,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865934737}
   m_CullTransparentMesh: 1
+--- !u!114 &1865934742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865934737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c447f3eb9f06a041a1c11905ca8b255, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChangeBtn: {fileID: 1865934737}
+  StartBtn: {fileID: 1971317604}
+  p1: {fileID: 522894803}
+  p2: {fileID: 2048863144}
+  clickCBtn: 0
 --- !u!1 &1878129683
 GameObject:
   m_ObjectHideFlags: 0
