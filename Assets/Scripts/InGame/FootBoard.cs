@@ -11,28 +11,28 @@ public class FootBoard : MonoBehaviour
         while(alpha < 1)
         {
             alpha += 0.02f;
-            this.gameObject.GetComponent<Image>().color = new Color(0,0,0,alpha);
+            GetComponent<SpriteRenderer>().color = new Color(0,0,0,alpha);
             yield return new WaitForSeconds(0.01f);
         }
         this.gameObject.SetActive(false);
-
     }
+    
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log(col.GetComponent<Board>().plusBoardNum);
-        Debug.Log(col.GetComponent<Piece>().boardNum); 
-        if(col.GetComponent<Board>().plusBoardNum == col.GetComponent<Piece>().boardNum)
+        if(col.GetComponent<Piece>().board.plusBoardNum == col.GetComponent<Piece>().boardNum)
         {
+            col.GetComponent<Piece>().StopCoroutine(col.GetComponent<Piece>().MoveCoroutine());
             col.GetComponent<Piece>().boardNum += 1;
             col.GetComponent<Piece>().StartCoroutine(col.GetComponent<Piece>().MoveCoroutine());
+            StartCoroutine(FadeOut()); 
         }
-        else if(col.GetComponent<Board>().minusBoardNum == col.GetComponent<Piece>().boardNum)
+        else if(col.GetComponent<Piece>().board.minusBoardNum == col.GetComponent<Piece>().boardNum)
         {
+            col.GetComponent<Piece>().StopCoroutine(col.GetComponent<Piece>().MoveCoroutine());
             col.GetComponent<Piece>().boardNum -= 1;
             col.GetComponent<Piece>().StartCoroutine(col.GetComponent<Piece>().MoveCoroutine());
+            StartCoroutine(FadeOut()); 
         }
-        StartCoroutine(FadeOut()); 
     }
-
 }

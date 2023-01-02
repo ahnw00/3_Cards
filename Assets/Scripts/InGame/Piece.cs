@@ -23,7 +23,7 @@ public class Piece : MonoBehaviour
         runningOnCoroutine = true;
         Vector3 NewPos = new Vector3(boardPos[boardNum].transform.position.x, this.transform.position.y, -1);
         float time = 0;
-        float speed = 0.3f;
+        float speed = 0.4f;
         while(Vector2.Distance(transform.position, NewPos) > 0.01f)
         {
             time += Time.deltaTime * speed;
@@ -34,14 +34,4 @@ public class Piece : MonoBehaviour
         runningOnCoroutine = false;
     }
 
-    public void MovePiecePos(int moveNum)
-    {
-        boardNum += moveNum;
-        if(boardNum >= 11)
-        {
-            boardNum = 11;
-            Debug.Log("Game End");
-        }
-        StartCoroutine(MoveCoroutine());
-    }
 }
