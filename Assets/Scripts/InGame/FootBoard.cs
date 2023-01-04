@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class FootBoard : MonoBehaviour
 {
-    
+    Collider2D col;
+
     public IEnumerator FadeOut()
     {
         float alpha = 0.0f;
@@ -18,21 +20,36 @@ public class FootBoard : MonoBehaviour
     }
     
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D collider)
     {
+        col = collider;
+
         if(col.GetComponent<Piece>().board.plusBoardNum == col.GetComponent<Piece>().boardNum)
         {
-            col.GetComponent<Piece>().StopCoroutine(col.GetComponent<Piece>().MoveCoroutine());
-            col.GetComponent<Piece>().boardNum += 1;
-            col.GetComponent<Piece>().StartCoroutine(col.GetComponent<Piece>().MoveCoroutine());
-            StartCoroutine(FadeOut()); 
+            // col.GetComponent<Piece>().StopCoroutine(col.GetComponent<Piece>().MoveCoroutine());
+            // col.GetComponent<Piece>().boardNum += 1;
+            // col.GetComponent<Piece>().StartCoroutine(col.GetComponent<Piece>().MoveCoroutine());
+            // StartCoroutine(FadeOut()); 
+            StartCoroutine(DelayCheck(col.GetComponent<Piece>(), 1));
         }
         else if(col.GetComponent<Piece>().board.minusBoardNum == col.GetComponent<Piece>().boardNum)
         {
-            col.GetComponent<Piece>().StopCoroutine(col.GetComponent<Piece>().MoveCoroutine());
-            col.GetComponent<Piece>().boardNum -= 1;
-            col.GetComponent<Piece>().StartCoroutine(col.GetComponent<Piece>().MoveCoroutine());
-            StartCoroutine(FadeOut()); 
+            // col.GetComponent<Piece>().StopCoroutine(col.GetComponent<Piece>().MoveCoroutine());
+            // col.GetComponent<Piece>().boardNum -= 1;
+            // col.GetComponent<Piece>().StartCoroutine(col.GetComponent<Piece>().MoveCoroutine());
+            // StartCoroutine(FadeOut()); 
+            StartCoroutine(DelayCheck(col.GetComponent<Piece>(), -1));
         }
+    }
+
+    IEnumerator DelayCheck(Piece piece, int plusOrMinus)
+    {
+        while(piece.runningOnCoroutine)
+        {
+            yield return null;
+        }
+        col.GetComponent<Piece>().boardNum += plusOrMinus;
+        col.GetComponent<Piece>().StartCoroutine(col.GetComponent<Piece>().MoveCoroutine());
+        StartCoroutine(FadeOut()); 
     }
 }

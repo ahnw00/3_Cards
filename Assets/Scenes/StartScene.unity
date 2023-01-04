@@ -380,6 +380,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstChange: 0
+  p1score: 0
+  p2score: 0
+  gameMode: singleRound
 --- !u!1 &184456172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,8 +1113,9 @@ GameObject:
   - component: {fileID: 948865353}
   - component: {fileID: 948865352}
   - component: {fileID: 948865351}
+  - component: {fileID: 948865354}
   m_Layer: 5
-  m_Name: Button
+  m_Name: GameModeBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1219,6 +1223,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948865349}
   m_CullTransparentMesh: 1
+--- !u!114 &948865354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948865349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03bcff0796ecb2f43b221caab555a217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  singleRoundImg: {fileID: 21300000, guid: d4adf42729943a24eb68732b7045cb90, type: 3}
+  multipleRoundImg: {fileID: 21300000, guid: 6627bdc9f609e1646a52188a80ddf4c5, type: 3}
 --- !u!1 &980293891
 GameObject:
   m_ObjectHideFlags: 0

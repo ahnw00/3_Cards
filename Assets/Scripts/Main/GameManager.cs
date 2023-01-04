@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
     public bool firstChange = false;
+    public int p1score, p2score = 0;
+    public string gameMode = "singleRound"; //단판 : "singleRound", 삼세판 : "multipleRound"
 
     void Awake()
     {
@@ -25,8 +26,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
 
-    
+    }
 }

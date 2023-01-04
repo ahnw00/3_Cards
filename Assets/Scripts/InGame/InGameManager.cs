@@ -7,11 +7,11 @@ public class InGameManager : MonoBehaviour
     public static InGameManager instance;
     SlotManager slotManager;
     GameManager gameManager;
-    [HideInInspector] public bool player1Turn, player2Turn = false;
+    public bool player1Turn, player2Turn = false;
     [SerializeField] Piece p1Piece, p2Piece;
     public bool showingResult = false;
     [HideInInspector] public int round = 0;
-    public GameObject cutton;
+    public GameObject cutton, gameEnd;
     public GameObject player1Panel, player2Panel;
 
     void Awake()
@@ -46,6 +46,8 @@ public class InGameManager : MonoBehaviour
 
             round++;
 
+            while((!player1Turn && !player2Turn && !showingResult)) { yield return null; }
+
             while(showingResult)
             {
                 yield return new WaitForSeconds(4f);
@@ -57,24 +59,17 @@ public class InGameManager : MonoBehaviour
                 }
             }
 
-            if(p1Piece.boardNum == 11 || p2Piece.boardNum == 11)
+            if(p1Piece.boardNum == 11 || p2Piece.boardNum == 11) 
             {
-                break;
-            }
-            
+                gameEnd.SetActive(true);
+                break; 
+            } 
             cutton.SetActive(true);
 
-            while(player1Turn)
-            {
-                yield return null;
-            }
-            player2Turn = true;
+            while(player1Turn) { yield return null; }
             cutton.SetActive(true);
 
-            while(player2Turn)
-            {
-                yield return null;
-            }
+            while(player2Turn) { yield return null; }
             cutton.SetActive(true);
         }
     }

@@ -33,5 +33,4 @@ public class Piece : MonoBehaviour
         transform.position = NewPos;
         runningOnCoroutine = false;
     }
-
 }

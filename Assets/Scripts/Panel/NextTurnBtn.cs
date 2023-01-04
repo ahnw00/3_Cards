@@ -41,6 +41,7 @@ public class NextTurnBtn : MonoBehaviour
                     }
                 }
                 inGameManager.player1Turn = false;
+                inGameManager.player2Turn = true;
                 player1Panel.SetActive(false);
             }
             else if(player2Panel.activeSelf)
@@ -58,7 +59,6 @@ public class NextTurnBtn : MonoBehaviour
                     }
                 }
                 inGameManager.player2Turn = false;
-                inGameManager.showingResult = true;
                 player2Panel.SetActive(false);
             }
             

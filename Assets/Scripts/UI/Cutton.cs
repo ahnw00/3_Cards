@@ -20,7 +20,7 @@ public class Cutton : MonoBehaviour
 
     public void ChangeTurn()
     {
-        if(inGameManager.player1Turn && !inGameManager.showingResult)
+        if(inGameManager.player1Turn)
         {
             player1Panel.SetActive(true);
             slotManager.ResetCard1Deck();
@@ -30,8 +30,9 @@ public class Cutton : MonoBehaviour
             player2Panel.SetActive(true);
             slotManager.ResetCard2Deck();
         }
-        else if(inGameManager.showingResult)
+        else if(!inGameManager.player1Turn && !inGameManager.player2Turn && !inGameManager.showingResult)
         {
+            inGameManager.showingResult = true;
             slotManager.CompareCardNum();
         }
     }
