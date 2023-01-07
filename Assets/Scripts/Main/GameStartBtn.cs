@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameStartBtn : MonoBehaviour
 {
-    public bool showRules = false; // 게임방법 버튼 눌리면 이거 true로 바꿔줌
+    public bool showRules = true; // 게임방법 버튼 눌리면 이거 true로 바꿔줌
     public GameObject gameStartPanel;
 
     void Start() {

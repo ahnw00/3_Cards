@@ -13,6 +13,7 @@ public class InGameManager : MonoBehaviour
     [HideInInspector] public int round = 0;
     public GameObject cutton, gameEnd;
     public GameObject player1Panel, player2Panel;
+    public GameObject cake;
 
     void Awake()
     {
@@ -36,6 +37,7 @@ public class InGameManager : MonoBehaviour
             p2Piece.boardNum++;
             p2Piece.StartCoroutine(p2Piece.MoveCoroutine());
         }
+        cake.GetComponent<Animator>().SetTrigger("Start");
     }
 
     IEnumerator TurnManager()

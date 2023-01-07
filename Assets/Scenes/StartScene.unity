@@ -3073,7 +3073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0e32d72fd35508488f4104f742b6baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showRules: 0
+  showRules: 1
   gameStartPanel: {fileID: 1990072981}
 --- !u!1 &1971317604
 GameObject:
