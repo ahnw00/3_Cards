@@ -25,6 +25,7 @@ public class InGameManager : MonoBehaviour
         slotManager = SlotManager.instance;
         gameManager = GameManager.instance;
         StartCoroutine(TurnManager());
+        cake.GetComponent<Animator>().SetTrigger("Start");
         player1Turn = true;
 
         if(gameManager.firstChange)
@@ -37,7 +38,7 @@ public class InGameManager : MonoBehaviour
             p2Piece.boardNum++;
             p2Piece.StartCoroutine(p2Piece.MoveCoroutine());
         }
-        cake.GetComponent<Animator>().SetTrigger("Start");
+        
     }
 
     IEnumerator TurnManager()

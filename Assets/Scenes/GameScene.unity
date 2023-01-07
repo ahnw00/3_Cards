@@ -5855,7 +5855,7 @@ MonoBehaviour:
   showingResult: 0
   round: 0
   cutton: {fileID: 864456052}
-  gameEnd: {fileID: 0}
+  gameEnd: {fileID: 50767610}
   player1Panel: {fileID: 1593348629}
   player2Panel: {fileID: 2123810389}
   cake: {fileID: 621287144}

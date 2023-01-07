@@ -7,11 +7,13 @@ public class GameModeBtn : MonoBehaviour
 {
     GameManager gameManager;
     [SerializeField] Sprite singleRoundImg, multipleRoundImg;
+    [SerializeField] GameObject logo;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameManager.instance;
+        logo.GetComponent<Animator>().SetTrigger("MoveStart");
         
         if(gameManager.gameMode == "singleRound")
         {

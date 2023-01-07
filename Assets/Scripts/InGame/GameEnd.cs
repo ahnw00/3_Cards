@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameEnd : MonoBehaviour
 {
@@ -26,6 +28,13 @@ public class GameEnd : MonoBehaviour
         else if(gameManager.gameMode == "multipleRound")
         {
 
+        }
+    }
+
+    private void Update() {
+        if (Input.GetMouseButtonDown(0))
+        {
+            SceneManager.LoadScene("StartScene");
         }
     }
 }
