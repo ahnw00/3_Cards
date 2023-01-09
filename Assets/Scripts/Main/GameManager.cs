@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public bool firstChange = false;
+    public bool firstChange = false; //false면 p1이 선공, true면 p2가 선공
     public int p1score, p2score = 0;
     public string gameMode = "singleRound"; //단판 : "singleRound", 삼세판 : "multipleRound"
 

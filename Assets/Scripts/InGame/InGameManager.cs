@@ -13,7 +13,6 @@ public class InGameManager : MonoBehaviour
     [HideInInspector] public int round = 0;
     public GameObject cutton, gameEnd;
     public GameObject player1Panel, player2Panel;
-    public GameObject cake;
 
     void Awake()
     {
@@ -25,18 +24,19 @@ public class InGameManager : MonoBehaviour
         slotManager = SlotManager.instance;
         gameManager = GameManager.instance;
         StartCoroutine(TurnManager());
-        cake.GetComponent<Animator>().SetTrigger("Start");
         player1Turn = true;
 
         if(gameManager.firstChange)
         {
             p1Piece.boardNum++;
             p1Piece.StartCoroutine(p1Piece.MoveCoroutine());
+            //
         }
         else
         {
             p2Piece.boardNum++;
             p2Piece.StartCoroutine(p2Piece.MoveCoroutine());
+            //
         }
         
     }
@@ -75,5 +75,12 @@ public class InGameManager : MonoBehaviour
             while(player2Turn) { yield return null; }
             cutton.SetActive(true);
         }
+
+        GetResult();
+    }
+
+    void GetResult()
+    {
+        //
     }
 }

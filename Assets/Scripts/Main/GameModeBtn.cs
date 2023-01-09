@@ -7,21 +7,24 @@ public class GameModeBtn : MonoBehaviour
 {
     GameManager gameManager;
     [SerializeField] Sprite singleRoundImg, multipleRoundImg;
-    [SerializeField] GameObject logo;
 
-    // Start is called before the first frame update
     void Start()
     {
         gameManager = GameManager.instance;
-        logo.GetComponent<Animator>().SetTrigger("MoveStart");
-        
+    }
+
+    // Start is called before the first frame update
+    public void ChangeMode()
+    {
         if(gameManager.gameMode == "singleRound")
         {
-            this.GetComponent<Image>().sprite = singleRoundImg;
+            this.GetComponent<Image>().sprite = multipleRoundImg;
+            gameManager.gameMode = "multipleRound";
         }
         else if(gameManager.gameMode == "multipleRound")
         {
-            this.GetComponent<Image>().sprite = multipleRoundImg;
+            this.GetComponent<Image>().sprite = singleRoundImg;
+            gameManager.gameMode = "singleRound";
         }
     }
 }

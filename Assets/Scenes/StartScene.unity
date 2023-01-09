@@ -1395,7 +1395,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 948865352}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 948865354}
+        m_TargetAssemblyTypeName: GameModeBtn, Assembly-CSharp
+        m_MethodName: ChangeMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &948865352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1448,7 +1460,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   singleRoundImg: {fileID: 21300000, guid: d4adf42729943a24eb68732b7045cb90, type: 3}
   multipleRoundImg: {fileID: 21300000, guid: 6627bdc9f609e1646a52188a80ddf4c5, type: 3}
-  logo: {fileID: 2014070330}
 --- !u!1 &980293891
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,16 +9,16 @@ public class FootBoard : MonoBehaviour
 
     public IEnumerator FadeOut()
     {
-        float alpha = 0.0f;
-        while(alpha < 1)
+        this.GetComponent<BoxCollider2D>().enabled = false;
+        float alpha = 1f;
+        while(alpha > 0)
         {
-            alpha += 0.02f;
+            alpha -= 0.02f;
             GetComponent<SpriteRenderer>().color = new Color(0,0,0,alpha);
             yield return new WaitForSeconds(0.01f);
         }
         this.gameObject.SetActive(false);
     }
-    
 
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -26,18 +26,10 @@ public class FootBoard : MonoBehaviour
 
         if(col.GetComponent<Piece>().board.plusBoardNum == col.GetComponent<Piece>().boardNum)
         {
-            // col.GetComponent<Piece>().StopCoroutine(col.GetComponent<Piece>().MoveCoroutine());
-            // col.GetComponent<Piece>().boardNum += 1;
-            // col.GetComponent<Piece>().StartCoroutine(col.GetComponent<Piece>().MoveCoroutine());
-            // StartCoroutine(FadeOut()); 
             StartCoroutine(DelayCheck(col.GetComponent<Piece>(), 1));
         }
         else if(col.GetComponent<Piece>().board.minusBoardNum == col.GetComponent<Piece>().boardNum)
         {
-            // col.GetComponent<Piece>().StopCoroutine(col.GetComponent<Piece>().MoveCoroutine());
-            // col.GetComponent<Piece>().boardNum -= 1;
-            // col.GetComponent<Piece>().StartCoroutine(col.GetComponent<Piece>().MoveCoroutine());
-            // StartCoroutine(FadeOut()); 
             StartCoroutine(DelayCheck(col.GetComponent<Piece>(), -1));
         }
     }

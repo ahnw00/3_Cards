@@ -20,6 +20,7 @@ public class Cutton : MonoBehaviour
 
     public void ChangeTurn()
     {
+        this.GetComponent<Animator>().SetTrigger("OnClick");
         if(inGameManager.player1Turn)
         {
             player1Panel.SetActive(true);
@@ -33,7 +34,15 @@ public class Cutton : MonoBehaviour
         else if(!inGameManager.player1Turn && !inGameManager.player2Turn && !inGameManager.showingResult)
         {
             inGameManager.showingResult = true;
+        }
+    }
+
+    public void SetOff()
+    {
+        if(!inGameManager.player1Turn && !inGameManager.player2Turn && !inGameManager.showingResult)
+        {
             slotManager.CompareCardNum();
         }
+        this.gameObject.SetActive(false);
     }
 }

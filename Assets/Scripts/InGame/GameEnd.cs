@@ -31,7 +31,8 @@ public class GameEnd : MonoBehaviour
         }
     }
 
-    private void Update() {
+    private void Update() 
+    {
         if (Input.GetMouseButtonDown(0))
         {
             SceneManager.LoadScene("StartScene");

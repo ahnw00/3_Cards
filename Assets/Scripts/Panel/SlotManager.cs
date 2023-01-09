@@ -5,17 +5,14 @@ using UnityEngine.UI;
 
 public class SlotManager : MonoBehaviour
 {
+    GameManager gameManager;
     InGameManager inGameManager;
     public static SlotManager instance;
     public CardSlot[] player1CardSlots, player2CardSlots; //cardslot for each player.
     public int[] cardPosX; // card들의 x좌표값 저장
-    [SerializeField] GameObject p1CardDeck, p2CardDeck;
     [SerializeField] Piece p1Piece, p2Piece;
     public int[] player1Card; // selected number list of player1
     public int[] player2Card; // selected number list of player2
-
-    public int[] player1Moving = {0, 0, 0}; // 승부 판별 결과
-    public int[] player2Moving = {0, 0, 0}; // 승부 판별 결과 안움직인다(0) or 움직인다(1)
 
     public GameObject[] p1, p2;
 
@@ -25,6 +22,7 @@ public class SlotManager : MonoBehaviour
     }
     void Start()
     {
+        gameManager = GameManager.instance;
         inGameManager = InGameManager.instance;
 
         for(int i = 0; i < 3; i++)
@@ -46,6 +44,14 @@ public class SlotManager : MonoBehaviour
     public void CheckP2SlotNum()
     {// if you click nextTurn Btn of player 2 panel, excute this func
         for(int i = 0; i < 3; i++)  player2Card[i] = player2CardSlots[i].cardOnSlot.cardNum;
+    }
+
+    public void CheckSlotNum(CardSlot[] cardSlots, int[] playerCards)
+    {
+        for(int i = 0; i < cardSlots.Length; i++)
+        {
+            playerCards[i] = cardSlots[i].slotNum;
+        }
     }
 
     public void CompareCardNum() // 카드 별 크기 비교 함수
@@ -71,8 +77,8 @@ public class SlotManager : MonoBehaviour
             }
         }
 
-        ///////////////////////선공 후공 조건
-        StartCoroutine(Delay(p1Piece.MoveCoroutine(), p2Piece.MoveCoroutine()));
+        if(!gameManager.firstChange) { StartCoroutine(Delay(p1Piece.MoveCoroutine(), p2Piece.MoveCoroutine())); }
+        else { StartCoroutine(Delay(p2Piece.MoveCoroutine(), p1Piece.MoveCoroutine())); }
     }
 
     IEnumerator Delay(IEnumerator coroutine1, IEnumerator coroutine2)

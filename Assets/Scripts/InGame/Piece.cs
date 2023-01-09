@@ -5,7 +5,6 @@ using UnityEngine;
 public class Piece : MonoBehaviour
 {
     InGameManager inGameManager;
-    public int pieceNum;
     public bool runningOnCoroutine = false;
     public Board board;
     public int boardNum = 0;
