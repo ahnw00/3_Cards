@@ -27,7 +27,7 @@ public class GameEnd : MonoBehaviour
         }
         else if(gameManager.gameMode == "multipleRound")
         {
-
+            gameManager.multiroundCount++;
         }
     }
 

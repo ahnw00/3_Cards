@@ -28,7 +28,6 @@ public class NextTurnBtn : MonoBehaviour
         {
             if(player1Panel.activeSelf)
             {
-                slotManager.CheckP1SlotNum();
                 slotManager.CheckSlotNum(slotManager.player1CardSlots, slotManager.player1Card);
                 string num1 = slotManager.player1Card[0].ToString();
                 string num2 = slotManager.player1Card[1].ToString();
@@ -47,7 +46,7 @@ public class NextTurnBtn : MonoBehaviour
             }
             else if(player2Panel.activeSelf)
             {
-                slotManager.CheckP2SlotNum();
+                slotManager.CheckSlotNum(slotManager.player2CardSlots, slotManager.player2Card);
                 string num1 = slotManager.player2Card[0].ToString();
                 string num2 = slotManager.player2Card[1].ToString();
                 string num3 = slotManager.player2Card[2].ToString();

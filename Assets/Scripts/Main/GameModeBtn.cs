@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameModeBtn : MonoBehaviour
 {
     GameManager gameManager;
+    public StartBtn startbtn;
     [SerializeField] Sprite singleRoundImg, multipleRoundImg;
 
     void Start()
@@ -26,5 +27,6 @@ public class GameModeBtn : MonoBehaviour
             this.GetComponent<Image>().sprite = singleRoundImg;
             gameManager.gameMode = "singleRound";
         }
+        startbtn.ResetPlayerScore();
     }
 }

@@ -32,20 +32,6 @@ public class SlotManager : MonoBehaviour
         }
     }
 
-    public void CheckP1SlotNum() 
-    {// if you click nextTurn Btn of player 1 panel, excute this func
-        for(int i = 0; i < player1CardSlots.Length; i++)
-        {
-            player1Card[i] = player1CardSlots[i].slotNum;
-        }
-        
-    }
-    
-    public void CheckP2SlotNum()
-    {// if you click nextTurn Btn of player 2 panel, excute this func
-        for(int i = 0; i < 3; i++)  player2Card[i] = player2CardSlots[i].cardOnSlot.cardNum;
-    }
-
     public void CheckSlotNum(CardSlot[] cardSlots, int[] playerCards)
     {
         for(int i = 0; i < cardSlots.Length; i++)
@@ -87,26 +73,16 @@ public class SlotManager : MonoBehaviour
         yield return StartCoroutine(coroutine2);
     }
 
-    public void ResetCard1Deck() // 텍1 카드 리셋
+    public void ResetCardDeck(GameObject[] deck) // 덱2 카드 리셋
     {
         if(inGameManager.round % 2 != 0)
         {
-            for(int i = 0; i < p1.Length; i++)
+            for(int i = 0; i < deck.Length; i++)
             {
-                p1[i].SetActive(true);
-                p1[i].GetComponent<RectTransform>().anchoredPosition = new Vector2(cardPosX[i], 0);
+                deck[i].SetActive(true);
+                deck[i].GetComponent<RectTransform>().anchoredPosition = new Vector2(cardPosX[i], 0);
             }
         }
     }
-    public void ResetCard2Deck() // 덱2 카드 리셋
-    {
-        if(inGameManager.round % 2 != 0)
-        {
-            for(int i = 0; i < p2.Length; i++)
-            {
-                p2[i].SetActive(true);
-                p2[i].GetComponent<RectTransform>().anchoredPosition = new Vector2(cardPosX[i], 0);
-            }
-        }
-    }
+
 }
