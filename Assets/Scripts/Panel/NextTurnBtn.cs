@@ -39,10 +39,11 @@ public class NextTurnBtn : MonoBehaviour
                     {
                         player1CardDeck[i].SetActive(false); // 해당카드 꺼줌
                     }
-                }
+                }  
                 inGameManager.player1Turn = false;
                 inGameManager.player2Turn = true;
                 player1Panel.SetActive(false);
+               
             }
             else if(player2Panel.activeSelf)
             {

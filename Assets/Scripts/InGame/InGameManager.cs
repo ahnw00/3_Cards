@@ -30,14 +30,16 @@ public class InGameManager : MonoBehaviour
         {
             p1Piece.boardNum++;
             p1Piece.StartCoroutine(p1Piece.MoveCoroutine());
-            //
+            player1Panel.SetActive(false);
+            player2Panel.SetActive(true);
         }
         else
         {
             p2Piece.boardNum++;
-            p2Piece.StartCoroutine(p2Piece.MoveCoroutine());
-            //
+            player1Panel.SetActive(true);
+            player2Panel.SetActive(false);
         }
+
         
     }
 
@@ -81,6 +83,14 @@ public class InGameManager : MonoBehaviour
 
     void GetResult()
     {
-        //
+        if(p1Piece.boardNum == 11)
+        {
+             gameManager.p1score += 1;
+        }
+        else
+        {
+            gameManager.p2score += 1;
+        }
+
     }
 }
