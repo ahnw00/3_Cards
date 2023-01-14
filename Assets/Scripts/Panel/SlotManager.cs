@@ -13,7 +13,6 @@ public class SlotManager : MonoBehaviour
     [SerializeField] Piece p1Piece, p2Piece;
     public int[] player1Card; // selected number list of player1
     public int[] player2Card; // selected number list of player2
-
     public GameObject[] p1, p2;
 
     void Awake()
@@ -84,5 +83,4 @@ public class SlotManager : MonoBehaviour
             }
         }
     }
-
 }

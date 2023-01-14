@@ -39,7 +39,7 @@ public class Cutton : MonoBehaviour
 
     public void SetOff()
     {
-        if(!inGameManager.player1Turn && !inGameManager.player2Turn && !inGameManager.showingResult)
+        if(!inGameManager.player1Turn && !inGameManager.player2Turn && inGameManager.showingResult)
         {
             slotManager.CompareCardNum();
         }

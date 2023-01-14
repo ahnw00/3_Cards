@@ -62,7 +62,6 @@ public class NextTurnBtn : MonoBehaviour
                 inGameManager.player2Turn = false;
                 player2Panel.SetActive(false);
             }
-            
         }
     }
 }

@@ -8,8 +8,8 @@ public class InGameManager : MonoBehaviour
     SlotManager slotManager;
     GameManager gameManager;
     public bool player1Turn, player2Turn = false;
-    [SerializeField] Piece p1Piece, p2Piece;
     public bool showingResult = false;
+    [SerializeField] Piece p1Piece, p2Piece;
     [HideInInspector] public int round = 0;
     public GameObject cutton, gameEnd;
     public GameObject player1Panel, player2Panel;
@@ -18,29 +18,31 @@ public class InGameManager : MonoBehaviour
     {
         instance = this;
     }
+
     // Start is called before the first frame update
     void Start()
     {
         slotManager = SlotManager.instance;
         gameManager = GameManager.instance;
-        StartCoroutine(TurnManager());
-        player1Turn = true;
 
-        if(gameManager.firstChange)
+        //p1 선공
+        if(!gameManager.firstChange)
+        {
+            p2Piece.boardNum++;
+            p2Piece.StartCoroutine(p2Piece.MoveCoroutine());
+            player1Panel.SetActive(true);
+            player1Turn = true;
+        }
+        //p2 선공
+        else
         {
             p1Piece.boardNum++;
             p1Piece.StartCoroutine(p1Piece.MoveCoroutine());
-            player1Panel.SetActive(false);
             player2Panel.SetActive(true);
-        }
-        else
-        {
-            p2Piece.boardNum++;
-            player1Panel.SetActive(true);
-            player2Panel.SetActive(false);
+            player2Turn = true;
         }
 
-        
+        StartCoroutine(TurnManager());
     }
 
     IEnumerator TurnManager()
@@ -55,10 +57,12 @@ public class InGameManager : MonoBehaviour
 
             while(showingResult)
             {
-                yield return new WaitForSeconds(4f);
+                yield return new WaitForSeconds(5f);
                 if(!p1Piece.runningOnCoroutine && !p2Piece.runningOnCoroutine)
                 {
-                    player1Turn = true;
+                    if(!gameManager.firstChange) { player1Turn = true; }
+                    else { player2Turn = true; }
+
                     showingResult = false;
                     break;
                 }
@@ -71,11 +75,22 @@ public class InGameManager : MonoBehaviour
             } 
             cutton.SetActive(true);
 
-            while(player1Turn) { yield return null; }
-            cutton.SetActive(true);
+            if(!gameManager.firstChange)
+            {
+                while(player1Turn) { yield return null; }
+                cutton.SetActive(true);
 
-            while(player2Turn) { yield return null; }
-            cutton.SetActive(true);
+                while(player2Turn) { yield return null; }
+                cutton.SetActive(true);
+            }
+            else
+            {
+                while(player2Turn) { yield return null; }
+                cutton.SetActive(true);
+
+                while(player1Turn) { yield return null; }
+                cutton.SetActive(true);
+            }
         }
 
         GetResult();
@@ -85,12 +100,11 @@ public class InGameManager : MonoBehaviour
     {
         if(p1Piece.boardNum == 11)
         {
-             gameManager.p1score += 1;
+            gameManager.p1score += 1;
         }
         else
         {
             gameManager.p2score += 1;
         }
-
     }
 }
