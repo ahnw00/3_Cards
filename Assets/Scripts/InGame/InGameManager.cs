@@ -75,6 +75,7 @@ public class InGameManager : MonoBehaviour
             } 
             cutton.SetActive(true);
 
+            //p1 선공
             if(!gameManager.firstChange)
             {
                 while(player1Turn) { yield return null; }
@@ -83,6 +84,7 @@ public class InGameManager : MonoBehaviour
                 while(player2Turn) { yield return null; }
                 cutton.SetActive(true);
             }
+            //p2 선공
             else
             {
                 while(player2Turn) { yield return null; }
