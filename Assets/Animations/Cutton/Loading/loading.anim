@@ -284,7 +284,7 @@ AnimationClip:
       value: {fileID: 21300000, guid: 6efc3d4e26a3b344eb38c6630e1850e1, type: 3}
     - time: 3.8333333
       value: {fileID: 21300000, guid: a93de366dbd87244c84f7a1589a8b41b, type: 3}
-    - time: 3.9166667
+    - time: 4.6833334
       value: {fileID: 21300000, guid: a7c72e7075f7c8740a37846d7c7710c5, type: 3}
     - time: 4.75
       value: {fileID: 21300000, guid: 3ff2a5cac5fae34419ec8e8a2e67fd1f, type: 3}
