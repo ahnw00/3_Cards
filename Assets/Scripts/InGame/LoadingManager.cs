@@ -23,6 +23,7 @@ public class LoadingManager : MonoBehaviour
 
     public void AnimationEvent()
     {
+        
         //만약 플레이어1 승리시 resultText.text = "플레이어1 승리";
     }
 }
