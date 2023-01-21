@@ -8,6 +8,7 @@ public class Cutton : MonoBehaviour
     SlotManager slotManager;
     GameObject player1Panel;
     GameObject player2Panel;
+    [SerializeField] GameObject loading;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class Cutton : MonoBehaviour
 
     public void ChangeTurn()
     {
+        loading.SetActive(false);
         this.GetComponent<Animator>().SetTrigger("OnClick");
         if(inGameManager.player1Turn)
         {
