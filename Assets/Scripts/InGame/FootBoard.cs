@@ -22,6 +22,7 @@ public class FootBoard : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
+        this.GetComponent<AudioSource>().Play();
         col = collider;
 
         if(col.GetComponent<Piece>().board.plusBoardNum == col.GetComponent<Piece>().boardNum)

@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class LoadingManager : MonoBehaviour
 {
-    [SerializeField] Text[] resultText;    
+    [SerializeField] Text[] resultText;  
+    [SerializeField] GameObject cuttonCover;  
     SlotManager slotManager;
 
     void Start()
@@ -13,6 +14,15 @@ public class LoadingManager : MonoBehaviour
         slotManager = SlotManager.instance;
     }
 
+    public void LoadingEndEvent()
+    {
+        cuttonCover.SetActive(false);
+    }
+
+    public void PlayAudio()
+    {
+        this.GetComponent<AudioSource>().Play();
+    }
 
     public void AnimationEvent()
     {

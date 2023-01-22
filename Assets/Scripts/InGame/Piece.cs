@@ -19,6 +19,7 @@ public class Piece : MonoBehaviour
 
     public IEnumerator MoveCoroutine()
     {
+        this.GetComponent<AudioSource>().Play();
         runningOnCoroutine = true;
         Vector3 NewPos = new Vector3(boardPos[boardNum].transform.position.x, this.transform.position.y, -1);
         float time = 0;

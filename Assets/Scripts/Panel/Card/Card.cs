@@ -24,6 +24,7 @@ public class Card : MonoBehaviour
         {
             Vector2 slotPos = detectedSlot.GetComponent<RectTransform>().position;
             this.GetComponent<RectTransform>().position = slotPos;
+            detectedSlot.GetComponent<AudioSource>().Play();
         }
     }
 }

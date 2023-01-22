@@ -11,7 +11,7 @@ public class InGameManager : MonoBehaviour
     public bool showingResult = false;
     [SerializeField] Piece p1Piece, p2Piece;
     [HideInInspector] public int round = 0;
-    public GameObject cutton, gameEnd, loading;
+    public GameObject cutton, gameEnd, loading, cuttonCover;
     public GameObject player1Panel, player2Panel;
 
     void Awake()
@@ -83,6 +83,7 @@ public class InGameManager : MonoBehaviour
                 loading.SetActive(false);
 
                 while(player2Turn) { yield return null; }
+                cuttonCover.SetActive(true);
                 cutton.SetActive(true);
                 loading.SetActive(true);
             }
@@ -94,6 +95,7 @@ public class InGameManager : MonoBehaviour
                 loading.SetActive(false);
 
                 while(player1Turn) { yield return null; }
+                cuttonCover.SetActive(true);
                 cutton.SetActive(true);
                 loading.SetActive(true);
             }

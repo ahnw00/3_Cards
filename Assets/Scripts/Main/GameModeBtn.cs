@@ -12,6 +12,10 @@ public class GameModeBtn : MonoBehaviour
     void Start()
     {
         gameManager = GameManager.instance;
+        if(gameManager.gameMode == "multipleRound")
+        {
+            this.GetComponent<Image>().sprite = multipleRoundImg;
+        }
     }
 
     // Start is called before the first frame update
