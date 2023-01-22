@@ -5,25 +5,31 @@ using UnityEngine.UI;
 
 public class LoadingManager : MonoBehaviour
 {
-    [SerializeField] Text resultText;
-    [SerializeField] Text resultText1;
-    [SerializeField] Text resultText2;
+    [SerializeField] Text[] resultText;    
+    SlotManager slotManager;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        slotManager = SlotManager.instance;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void AnimationEvent()
     {
-        
-        //만약 플레이어1 승리시 resultText.text = "플레이어1 승리";
+        for(int i = 0; i < 3; i++)
+        {
+            if(slotManager.player1Card[i] > slotManager.player2Card[i])
+            {
+                resultText[i].text = "플레이어1 승리";
+            }
+            else if(slotManager.player1Card[i] < slotManager.player2Card[i])
+            {
+                resultText[i].text = "플레이어2 승리";
+            }
+            else
+            {
+                resultText[i].text = "무승부";
+            }
+        }
     }
 }
