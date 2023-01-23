@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
-    public AudioSource BGMsource;
-    public AudioSource[] SFXsources;
-
+    public AudioMixer audioMixer;
+    float bgmVolume;
+    float sfxVolume;
+    
     void Awake()
     {
         if (instance == null)
@@ -24,12 +27,7 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SFXsources = FindObjectsOfType<AudioSource>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        audioMixer.SetFloat("BGM", -10);
+        audioMixer.SetFloat("SFX", 0); // 이런식으로 사용하면 돼 ^^
     }
 }
