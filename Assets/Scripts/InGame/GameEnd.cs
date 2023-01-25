@@ -23,7 +23,7 @@ public class GameEnd : MonoBehaviour
     {
         if(gameManager.gameMode == "singleRound")
         {
-
+            gameManager.singleroundCount++;
         }
         else if(gameManager.gameMode == "multipleRound")
         {

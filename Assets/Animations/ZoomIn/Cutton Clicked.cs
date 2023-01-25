@@ -18,7 +18,7 @@ public class CuttonClicked : MonoBehaviour
         {
             animator.SetBool("Cutton Clicked", false);
         }
-        else (cutton.activeSelf == false)
+        else if (cutton.activeSelf == false)
         {
             animator.SetBool("Cutton Clicked", true);
         }

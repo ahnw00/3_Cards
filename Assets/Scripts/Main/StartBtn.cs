@@ -18,8 +18,11 @@ public class StartBtn : MonoBehaviour
     {
         if(gameManager.gameMode == "singleRound") // 단판일때 게임 새로 시작하면 점수 초기화
         {
-            gameManager.p1score = 0;
-            gameManager.p2score = 0;
+            if(gameManager.singleroundCount != 0)
+            {
+                gameManager.p1score = 0;
+                gameManager.p2score = 0;
+            }
         }
         else if(gameManager.gameMode == "multipleRound")
         {
