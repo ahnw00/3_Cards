@@ -630,6 +630,7 @@ MonoBehaviour:
   p2score: 0
   gameMode: singleRound
   multiroundCount: 0
+  singleroundCount: 0
 --- !u!82 &113042325
 AudioSource:
   m_ObjectHideFlags: 0
