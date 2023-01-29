@@ -28,11 +28,11 @@ public class LoadingManager : MonoBehaviour
     {
         for(int i = 0; i < 3; i++)
         {
-            if(slotManager.player1Card[i] > slotManager.player2Card[i])
+            if((slotManager.player1Card[i] == 0 && slotManager.player2Card[i] == 5) || ((slotManager.player1Card[i] != 5 && slotManager.player2Card[i] != 0) && (slotManager.player1Card[i] > slotManager.player2Card[i])))
             {
                 resultText[i].text = "플레이어1 승리";
             }
-            else if(slotManager.player1Card[i] < slotManager.player2Card[i])
+            else if((slotManager.player1Card[i] == 5 && slotManager.player2Card[i] == 0) || (slotManager.player1Card[i] < slotManager.player2Card[i]))
             {
                 resultText[i].text = "플레이어2 승리";
             }
