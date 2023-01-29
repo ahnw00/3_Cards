@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class InGameManager : MonoBehaviour
 {
     public static InGameManager instance;
@@ -10,9 +10,12 @@ public class InGameManager : MonoBehaviour
     public bool player1Turn, player2Turn = false;
     public bool showingResult = false;
     [SerializeField] Piece p1Piece, p2Piece;
+    [SerializeField] Text endText;
     [HideInInspector] public int round = 0;
     public GameObject cutton, gameEnd, loading, cuttonCover;
     public GameObject player1Panel, player2Panel;
+ 
+
 
     void Awake()
     {
@@ -71,6 +74,14 @@ public class InGameManager : MonoBehaviour
             if(p1Piece.boardNum == 11 || p2Piece.boardNum == 11) 
             {
                 gameEnd.SetActive(true);
+                if(p1Piece.boardNum == 11)
+                {
+                    endText.text = "플레이어 1 승리";
+                }
+                else
+                {
+                    endText.text = "플레이어 2 승리";
+                }
                 break; 
             } 
             cutton.SetActive(true);
@@ -101,7 +112,7 @@ public class InGameManager : MonoBehaviour
             }
         }
 
-        GetResult();
+        GetResult();    
     }
 
     void GetResult()
