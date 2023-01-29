@@ -11,44 +11,17 @@ public class StartBtn : MonoBehaviour
     public TextMeshProUGUI p1Num, p2Num;
     private void Start() {
         gameManager = GameManager.instance;
-        p1Num.text = gameManager.p1score.ToString();
-        p2Num.text = gameManager.p2score.ToString();
+        ResetNumber();
     }
-    public void ResetPlayerScore()
+
+    public void ResetNumber()
     {
-        if(gameManager.gameMode == "singleRound") // 단판일때 게임 새로 시작하면 점수 초기화
-        {
-            if(gameManager.singleroundCount != 0)
-            {
-                gameManager.p1score = 0;
-                gameManager.p2score = 0;
-            }
-        }
-        else if(gameManager.gameMode == "multipleRound")
-        {
-            if(gameManager.multiroundCount == 3) // 3판 모두 끝난 경우
-            {
-                gameManager.p1score = 0;
-                gameManager.p2score = 0;
-                gameManager.multiroundCount = 0;
-            }
-            else if(gameManager.multiroundCount == 2 && gameManager.p1score != gameManager.p2score) // 한쪽이 3판 2선한 경우
-            {
-                gameManager.p1score = 0;
-                gameManager.p2score = 0;
-                gameManager.multiroundCount = 0;
-            }
-            else if(gameManager.multiroundCount == 0) // 이전 게임이 단판 버전이었을 경우
-            {
-                gameManager.p1score = 0;
-                gameManager.p2score = 0;
-            }
-        }
         p1Num.text = gameManager.p1score.ToString();
         p2Num.text = gameManager.p2score.ToString();
     }
     public void LoadGameScene()
     {
+        gameManager.multiroundCount++;
         SceneManager.LoadScene("GameScene");
     }
 }

@@ -8,6 +8,7 @@ public class GameModeBtn : MonoBehaviour
     GameManager gameManager;
     public StartBtn startbtn;
     [SerializeField] Sprite singleRoundImg, multipleRoundImg;
+    public GameObject alertPanel;
 
     void Start()
     {
@@ -28,9 +29,20 @@ public class GameModeBtn : MonoBehaviour
         }
         else if(gameManager.gameMode == "multipleRound")
         {
+            AlertChangingMode();
             this.GetComponent<Image>().sprite = singleRoundImg;
             gameManager.gameMode = "singleRound";
         }
-        startbtn.ResetPlayerScore();
+    }
+
+    public void AlertChangingMode()
+    {
+        if(gameManager.p1score != 0 || gameManager.p2score != 0)
+        {
+            alertPanel.SetActive(true);
+            gameManager.p1score = 0;
+            gameManager.p2score = 0;
+            startbtn.ResetNumber();
+        }
     }
 }

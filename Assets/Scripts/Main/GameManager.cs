@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     public int p1score, p2score = 0;
     public string gameMode = "singleRound"; //단판 : "singleRound", 삼세판 : "multipleRound"
     public int multiroundCount = 0;
-    public int singleroundCount = 0;
 
     void Awake()
     {
