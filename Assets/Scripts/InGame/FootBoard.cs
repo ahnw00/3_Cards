@@ -22,16 +22,17 @@ public class FootBoard : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        this.GetComponent<AudioSource>().Play();
         col = collider;
 
         if(col.GetComponent<Piece>().board.plusBoardNum == col.GetComponent<Piece>().boardNum)
         {
             StartCoroutine(DelayCheck(col.GetComponent<Piece>(), 1));
+            this.GetComponent<AudioSource>().Play();
         }
         else if(col.GetComponent<Piece>().board.minusBoardNum == col.GetComponent<Piece>().boardNum)
         {
             StartCoroutine(DelayCheck(col.GetComponent<Piece>(), -1));
+            this.GetComponent<AudioSource>().Play();
         }
     }
 

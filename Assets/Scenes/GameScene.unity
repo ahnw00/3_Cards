@@ -8940,6 +8940,7 @@ GameObject:
   - component: {fileID: 1593348630}
   - component: {fileID: 1593348632}
   - component: {fileID: 1593348631}
+  - component: {fileID: 1593348633}
   m_Layer: 5
   m_Name: Player1Panel
   m_TagString: Untagged
@@ -9008,6 +9009,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593348629}
   m_CullTransparentMesh: 1
+--- !u!114 &1593348633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593348629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9859957163d8f74c94b5ffee5443a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inGameManager: {fileID: 2008680199}
 --- !u!1 &1600022395
 GameObject:
   m_ObjectHideFlags: 0
@@ -10362,6 +10376,7 @@ MonoBehaviour:
   showingResult: 0
   p1Piece: {fileID: 510928843}
   p2Piece: {fileID: 1272561522}
+  board: {fileID: 1057711608}
   endText: {fileID: 1453436396}
   round: 0
   cutton: {fileID: 864456052}
@@ -10414,6 +10429,7 @@ GameObject:
   - component: {fileID: 2123810390}
   - component: {fileID: 2123810392}
   - component: {fileID: 2123810391}
+  - component: {fileID: 2123810393}
   m_Layer: 5
   m_Name: Player2Panel
   m_TagString: Untagged
@@ -10482,6 +10498,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123810389}
   m_CullTransparentMesh: 1
+--- !u!114 &2123810393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123810389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9859957163d8f74c94b5ffee5443a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inGameManager: {fileID: 2008680199}
 --- !u!1 &2131092039
 GameObject:
   m_ObjectHideFlags: 0

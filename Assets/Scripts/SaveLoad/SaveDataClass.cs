@@ -5,16 +5,10 @@ using UnityEngine;
 [System.Serializable]
 public class SaveDataClass
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool isFirst;
 
-    // Update is called once per frame
     public SaveDataClass()
     {
-        
+        isFirst = true;
     }
-
 }

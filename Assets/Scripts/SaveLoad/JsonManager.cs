@@ -6,17 +6,15 @@ using System.Text;
 
 public class JsonManager
 {
-public void DataInitialize()
+    public void DataInitialize()
     {
         SaveDataClass data = new SaveDataClass();
         SaveJson(data);
     }
 
-
     public void SaveJson(SaveDataClass saveData)
     {
         string jsonText;
-
 
         //안드로이드에서의 저장 위치를 다르게 해주어야 한다
         //Application.dataPath를 이용하면 어디로 가는지는 구글링 해보길 바란다

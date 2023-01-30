@@ -10,14 +10,13 @@ public class InGameManager : MonoBehaviour
     public bool player1Turn, player2Turn = false;
     public bool showingResult = false;
     [SerializeField] Piece p1Piece, p2Piece;
+    [SerializeField] Board board;
     [SerializeField] Text endText;
     [HideInInspector] public int round = 0;
     public GameObject cutton, gameEnd, loading, cuttonCover;
     public GameObject player1Panel, player2Panel;
     [HideInInspector] public bool winnerCheck = false; // 최종게임결과출력에서 사용합니다
     public GameEnd endScript;
- 
-
 
     void Awake()
     {
@@ -34,7 +33,8 @@ public class InGameManager : MonoBehaviour
         if(!gameManager.firstChange)
         {
             p2Piece.boardNum++;
-            p2Piece.StartCoroutine(p2Piece.MoveCoroutine());
+            Vector3 newPos = new Vector3(board.boardPos[p2Piece.boardNum].transform.position.x, p2Piece.transform.position.y, -1);
+            p2Piece.transform.position = newPos;
             player1Panel.SetActive(true);
             player1Turn = true;
         }
@@ -42,7 +42,8 @@ public class InGameManager : MonoBehaviour
         else
         {
             p1Piece.boardNum++;
-            p1Piece.StartCoroutine(p1Piece.MoveCoroutine());
+            Vector3 newPos = new Vector3(board.boardPos[p1Piece.boardNum].transform.position.x, p1Piece.transform.position.y, -1);
+            p1Piece.transform.position = newPos;
             player2Panel.SetActive(true);
             player2Turn = true;
         }
@@ -92,9 +93,10 @@ public class InGameManager : MonoBehaviour
                 endScript.ShowFinalResult();
                 break; 
             } 
-            cutton.SetActive(true);
+            if(round != 1) { cutton.SetActive(true); }
+            
 
-            //p1 선공
+            //p1 선공일 때
             if(!gameManager.firstChange)
             {
                 while(player1Turn) { yield return null; }
@@ -106,7 +108,7 @@ public class InGameManager : MonoBehaviour
                 cutton.SetActive(true);
                 loading.SetActive(true);
             }
-            //p2 선공
+            //p2 선공일 때
             else
             {
                 while(player2Turn) { yield return null; }

@@ -6,10 +6,14 @@ using TMPro;
 
 public class StartBtn : MonoBehaviour
 {
+    DataManager data;
     public GameModeBtn gamemode;
     GameManager gameManager;
     public TextMeshProUGUI p1Num, p2Num;
-    private void Start() {
+
+    private void Start() 
+    {
+        data = DataManager.singleTon;
         gameManager = GameManager.instance;
         ResetNumber();
     }
@@ -23,5 +27,10 @@ public class StartBtn : MonoBehaviour
     {
         gameManager.multiroundCount++;
         SceneManager.LoadScene("GameScene");
+        if(data.saveData.isFirst)
+        {
+            data.saveData.isFirst = false;
+            data.Save();
+        }
     }
 }

@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using System.Transactions;
 using UnityEngine;
 using UnityEngine.Analytics;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+
 
 //게임 시작 및 씬을 넘나들 때 사용하는 스크립트
 //매우중요!!!!!!!!!!!!!!!!!!!
@@ -16,12 +15,10 @@ using UnityEngine.UI;
 //세이브데이터 관리를 여기서 한다.
 public class DataManager : MonoBehaviour
 {
-    public List<GameObject> itemPrefabs;
     JsonManager jsonManager;
     public SaveDataClass saveData;
     public static DataManager singleTon;
 
-//nalsdkfjasd
     void Awake()
     {
         if (singleTon == null)
