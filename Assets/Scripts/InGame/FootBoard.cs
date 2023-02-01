@@ -24,12 +24,12 @@ public class FootBoard : MonoBehaviour
     {
         col = collider;
 
-        if(col.GetComponent<Piece>().board.plusBoardNum == col.GetComponent<Piece>().boardNum)
+        if((this.gameObject.CompareTag("plusboard")) && (col.GetComponent<Piece>().board.plusBoardNum == col.GetComponent<Piece>().boardNum))
         {
             StartCoroutine(DelayCheck(col.GetComponent<Piece>(), 1));
             this.GetComponent<AudioSource>().Play();
         }
-        else if(col.GetComponent<Piece>().board.minusBoardNum == col.GetComponent<Piece>().boardNum)
+        else if((this.gameObject.CompareTag("minusboard")) && (col.GetComponent<Piece>().board.minusBoardNum == col.GetComponent<Piece>().boardNum))
         {
             StartCoroutine(DelayCheck(col.GetComponent<Piece>(), -1));
             this.GetComponent<AudioSource>().Play();

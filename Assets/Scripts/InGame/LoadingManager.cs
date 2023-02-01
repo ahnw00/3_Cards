@@ -28,7 +28,7 @@ public class LoadingManager : MonoBehaviour
     {
         for(int i = 0; i < 3; i++)
         {
-            if((slotManager.player1Card[i] == 0 && slotManager.player2Card[i] == 5) || ((slotManager.player1Card[i] != 5 && slotManager.player2Card[i] != 0) && (slotManager.player1Card[i] > slotManager.player2Card[i])))
+            if((slotManager.player1Card[i] == 0 && slotManager.player2Card[i] == 5) || (slotManager.player1Card[i] > slotManager.player2Card[i] && !(slotManager.player1Card[i] == 5 && slotManager.player2Card[i] == 0 )))
             {
                 resultText[i].text = "플레이어1 승리";
             }

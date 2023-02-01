@@ -43,7 +43,7 @@ public class SlotManager : MonoBehaviour
     {
         for(int i = 0; i < 3; i++)
         {
-            if((player1Card[i] == 0 && player2Card[i] == 5) || ((player1Card[i] != 5 && player2Card[i] != 0) && (player1Card[i] > player2Card[i])))
+            if((player1Card[i] == 0 && player2Card[i] == 5) || (player1Card[i] > player2Card[i] && !(player1Card[i] == 5 && player2Card[i] == 0 )))
             {
                 p1Piece.boardNum++;
                 if(p1Piece.boardNum > 11)

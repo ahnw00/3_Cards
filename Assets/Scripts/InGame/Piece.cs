@@ -9,9 +9,11 @@ public class Piece : MonoBehaviour
     public Board board;
     public int boardNum = 0;
     Transform[] boardPos;
-    
+
+
     void Start()
     {
+
         inGameManager = InGameManager.instance;
         boardPos = board.boardPos;
         transform.position = new Vector3(boardPos[boardNum].transform.position.x, this.transform.position.y, -1);
