@@ -15,8 +15,8 @@ public class InGameManager : MonoBehaviour
     [HideInInspector] public int round = 0;
     public GameObject cutton, gameEnd, loading, cuttonCover;
     public GameObject player1Panel, player2Panel;
+    public GameEnd gameEndScpt;
     [HideInInspector] public bool winnerCheck = false; // 최종게임결과출력에서 사용합니다
-    public GameEnd endScript;
 
     void Awake()
     {
@@ -76,21 +76,18 @@ public class InGameManager : MonoBehaviour
 
             if(p1Piece.boardNum == 11 || p2Piece.boardNum == 11) 
             {
-                if(gameManager.gameMode == "multipleRound")
+                gameEnd.SetActive(true);
+                if(p1Piece.boardNum == 11)
                 {
-                    gameEnd.SetActive(true);
-                    if(p1Piece.boardNum == 11)
-                    {
-                        endText.text = "플레이어 1 승리";
-                        winnerCheck = false;
-                    }
-                    else
-                    {
-                        endText.text = "플레이어 2 승리";
-                        winnerCheck = true;
-                    }
+                    endText.text = "플레이어 1 승리";
+                    winnerCheck = false;
                 }
-                endScript.ShowFinalResult();
+                else
+                {
+                    endText.text = "플레이어 2 승리";
+                    winnerCheck = true;
+                }
+                gameEndScpt.ShowResult();
                 break; 
             } 
             if(round != 1) { cutton.SetActive(true); }
