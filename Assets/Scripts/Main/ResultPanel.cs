@@ -11,6 +11,7 @@ public class ResultPanel : MonoBehaviour
     InGameManager inGameManager;
     public GameObject finalGameEndPanel;
     [SerializeField] TextMeshProUGUI showResultText;
+    public GameObject Texts;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,10 @@ public class ResultPanel : MonoBehaviour
                 showResultText.text = "Player 2 is \n the winner!";
             }
             showResultText.text.Replace("\\n", "\n");
-            finalGameEndPanel.SetActive(true); ResetScore();
+            finalGameEndPanel.SetActive(true);
+            Texts.GetComponent<Animator>().SetTrigger("On");
+            //TextFade(0, 1.0f, showResultText);
+            ResetScore();
         }
         else if(gameManager.gameMode == "multipleRound") // 멀리라운드인 경우
         {
@@ -50,7 +54,9 @@ public class ResultPanel : MonoBehaviour
                     showResultText.text = "Player 2 is \n the winner!";
                 }
                 showResultText.text.Replace("\\n", "\n");
-                finalGameEndPanel.SetActive(true); ResetScore();
+                finalGameEndPanel.SetActive(true); 
+                Texts.GetComponent<Animator>().SetTrigger("On");
+                ResetScore();
             }
             else if(gameManager.multiroundCount == 2 && p1win != 0)
             {
@@ -63,11 +69,25 @@ public class ResultPanel : MonoBehaviour
                     showResultText.text = "Player 2 is \n the winner!";
                 }
                 showResultText.text.Replace("\\n", "\n");
-                finalGameEndPanel.SetActive(true); ResetScore();
+                finalGameEndPanel.SetActive(true); 
+                Texts.GetComponent<Animator>().SetTrigger("On");
+                ResetScore();
             }
         }
+        
     }
 
+    private void Update() {
+        if(gameManager.gobackStartScene)
+        {
+            if(Input.GetMouseButtonDown(0))
+            {
+                TextFade(1, 0.0f, finalGameEndPanel);
+                finalGameEndPanel.SetActive(false);
+            }
+        }
+        
+    }
     public void ResetScore()
     {
         gameManager.p1score = 0;
@@ -76,6 +96,17 @@ public class ResultPanel : MonoBehaviour
         if(gameManager.gameMode == "multipleRound")
         {
             gameManager.multiroundCount = 0;
+        }
+    }
+
+    IEnumerator TextFade(int first, float final, GameObject obj)
+    {
+        float fadeCount = first;
+        while(fadeCount < final)
+        {
+            fadeCount += 0.01f;
+            yield return new WaitForSeconds(0.001f);
+            obj.GetComponent<Image>().color = new Color(0, 0, 0, fadeCount);
         }
     }
 }
