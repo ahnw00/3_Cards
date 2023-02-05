@@ -13,7 +13,6 @@ public class Piece : MonoBehaviour
 
     void Start()
     {
-
         inGameManager = InGameManager.instance;
         boardPos = board.boardPos;
         transform.position = new Vector3(boardPos[boardNum].transform.position.x, this.transform.position.y, -1);

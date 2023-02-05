@@ -19,6 +19,7 @@ public class SlotManager : MonoBehaviour
     {
         instance = this;
     }
+    
     void Start()
     {
         gameManager = GameManager.instance;

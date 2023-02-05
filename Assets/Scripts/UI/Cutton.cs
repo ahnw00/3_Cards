@@ -6,8 +6,7 @@ public class Cutton : MonoBehaviour
 {
     InGameManager inGameManager;
     SlotManager slotManager;
-    GameObject player1Panel;
-    GameObject player2Panel;
+    GameObject player1Panel, player2Panel;
     [SerializeField] GameObject loading;
 
     // Start is called before the first frame update
@@ -25,12 +24,10 @@ public class Cutton : MonoBehaviour
         this.GetComponent<Animator>().SetTrigger("OnClick");
         if(inGameManager.player1Turn)
         {
-            player1Panel.SetActive(true);
             slotManager.ResetCardDeck(slotManager.p1);
         }
         else if(inGameManager.player2Turn)
         {
-            player2Panel.SetActive(true);
             slotManager.ResetCardDeck(slotManager.p2);
         }
         else if(!inGameManager.player1Turn && !inGameManager.player2Turn && !inGameManager.showingResult)
@@ -39,8 +36,22 @@ public class Cutton : MonoBehaviour
         }
     }
 
+    public void ChangeAudioClip(AudioClip clip)
+    {
+        this.GetComponent<AudioSource>().clip = clip;
+        this.GetComponent<AudioSource>().Play();
+    }
+
     public void SetOff()
     {
+        if(inGameManager.player1Turn)
+        {
+            player1Panel.SetActive(true);
+        }
+        else if(inGameManager.player2Turn)
+        {
+            player2Panel.SetActive(true);
+        }
         if(!inGameManager.player1Turn && !inGameManager.player2Turn && inGameManager.showingResult)
         {
             slotManager.CompareCardNum();

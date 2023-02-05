@@ -42,8 +42,8 @@ public class FootBoard : MonoBehaviour
         {
             yield return null;
         }
-        col.GetComponent<Piece>().boardNum += plusOrMinus;
-        col.GetComponent<Piece>().StartCoroutine(col.GetComponent<Piece>().MoveCoroutine());
+        piece.boardNum += plusOrMinus;
+        piece.StartCoroutine(col.GetComponent<Piece>().MoveCoroutine());
         StartCoroutine(FadeOut()); 
     }
 }
