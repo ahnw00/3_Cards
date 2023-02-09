@@ -25,7 +25,7 @@ public class Piece : MonoBehaviour
         float time = 0;
         
         float distance = Vector2.Distance(transform.position, NewPos);
-        float speed = 0.01f;
+        float speed = 0.05f;
         while(Vector2.Distance(transform.position, NewPos) > distance/6)
         {
             time += Time.deltaTime * speed;
@@ -39,7 +39,7 @@ public class Piece : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, NewPos, time);
             yield return null;
         }
-        speed = 0.01f;
+        speed = 0.05f;
         while(Vector2.Distance(transform.position, NewPos) > 0.01f)
         {
             time += Time.deltaTime * speed;
