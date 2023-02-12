@@ -29,20 +29,25 @@ public class GameModeBtn : MonoBehaviour
         }
         else if(gameManager.gameMode == "multipleRound")
         {
-            AlertChangingMode();
-            this.GetComponent<Image>().sprite = singleRoundImg;
-            gameManager.gameMode = "singleRound";
+            if(gameManager.p1score == 0 && gameManager.p2score == 0)
+            {
+                gameManager.p1score = 0;
+                gameManager.p2score = 0;
+                startbtn.ResetNumber();
+                this.GetComponent<Image>().sprite = singleRoundImg;
+                gameManager.gameMode = "singleRound";
+            }
+            else if(gameManager.p1score != 0 || gameManager.p2score != 0){alertPanel.SetActive(true); }
         }
     }
 
-    public void AlertChangingMode()
+    public void AcceptChangeMode()
     {
-        if(gameManager.p1score != 0 || gameManager.p2score != 0)
-        {
-            alertPanel.SetActive(true);
-            gameManager.p1score = 0;
-            gameManager.p2score = 0;
-            startbtn.ResetNumber();
-        }
+        gameManager.p1score = 0;
+        gameManager.p2score = 0;
+        startbtn.ResetNumber();
+        this.GetComponent<Image>().sprite = singleRoundImg;
+        gameManager.gameMode = "singleRound";
+        alertPanel.SetActive(false);  
     }
 }
