@@ -5,20 +5,18 @@ using UnityEngine.UI;
 
 public class GameStartBtn : MonoBehaviour
 {
-    public bool showRules = true; // 게임방법 버튼 눌리면 이거 true로 바꿔줌
+    DataManager data;
+    [SerializeField] GameObject howToPlayPanel;
     public GameObject gameStartPanel;
     public GameObject fadeinPanel,fadeoutPanel;
 
     void Start() {
-        /*if ('users show rule panel')
-        {
-            showRules = true;
-        }*/
+        data = DataManager.singleTon;
     }
 
     public void ClickStartBtn()
     {
-        if(showRules)
+        if(!data.saveData.isFirst)
         {
             fadeoutPanel.SetActive(true);
             fadeoutPanel.GetComponent<Animator>().SetTrigger("FadeOut");
@@ -26,7 +24,10 @@ public class GameStartBtn : MonoBehaviour
         }
         else
         {
-            //게임 방법 패널 setActive true;
+            howToPlayPanel.SetActive(true);
+            gameStartPanel.SetActive(true);
+            data.saveData.isFirst = false;
+            data.Save();
         }
     }
 

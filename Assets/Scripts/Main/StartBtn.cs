@@ -27,10 +27,5 @@ public class StartBtn : MonoBehaviour
     {
         gameManager.multiroundCount++;
         SceneManager.LoadScene("GameScene");
-        if(data.saveData.isFirst)
-        {
-            data.saveData.isFirst = false;
-            data.Save();
-        }
     }
 }
