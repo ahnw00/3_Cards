@@ -10,6 +10,7 @@ public class GameEnd : MonoBehaviour
     GameManager gameManager;
     InGameManager inGameManager;
     [SerializeField] GameObject endText;
+    [SerializeField] GameObject cuttonCover;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,8 @@ public class GameEnd : MonoBehaviour
 
     public void ShowResult()
     {
-        endText.SetActive(false);
+        cuttonCover.SetActive(true);
+        endText.SetActive(true);
         this.GetComponent<Animator>().SetTrigger("OnClick");
         // 1 구름 애니메이션 켜주기
         // 2 글자 페이드인
