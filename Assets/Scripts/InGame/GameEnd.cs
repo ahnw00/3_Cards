@@ -9,8 +9,7 @@ public class GameEnd : MonoBehaviour
 {
     GameManager gameManager;
     InGameManager inGameManager;
-    [SerializeField] GameObject endText;
-    [SerializeField] GameObject cuttonCover;
+    [SerializeField] GameObject endText, cuttonCover, cotton;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,23 +17,30 @@ public class GameEnd : MonoBehaviour
         inGameManager = InGameManager.instance;
     }
 
+    IEnumerator delayTime()
+    {
+       yield return new WaitForSeconds(0.5f);
+
+    }
+
     public void ShowResult()
     {
-        cuttonCover.SetActive(true);
-        endText.SetActive(true);
-        this.GetComponent<Animator>().SetTrigger("OnClick");
-        // 1 구름 애니메이션 켜주기
-        // 2 글자 페이드인
+        this.gameObject.SetActive(true);
+        delayTime();
+        cuttonCover.SetActive(false);
         // 3 클릭 받고 글자 페이드 아웃
         // 4 구름 애니메이션 끝나는 부분 
         // 5 애니메이션 끝나면 gotostartscene 함수 호출
     }
-    
+
     public void GotoStartScene()
     {
-        gameManager.gobackStartScene = true;
+        this.gameObject.SetActive(false);
+        //원래라면 여기에 커튼이 걷히는 효과를 넣어야 하나.. 기술 부족으로 구현 실패...
+        delayTime();
         SceneManager.LoadScene("StartScene");
     }
+
         public void ChangeAudioClip(AudioClip clip)
     {
         this.GetComponent<AudioSource>().clip = clip;

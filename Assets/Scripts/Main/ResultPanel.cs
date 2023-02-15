@@ -77,7 +77,8 @@ public class ResultPanel : MonoBehaviour
         
     }
 
-    private void Update() {
+    private void Update() 
+    {
         if(gameManager.gobackStartScene)
         {
             if(Input.GetMouseButtonDown(0))

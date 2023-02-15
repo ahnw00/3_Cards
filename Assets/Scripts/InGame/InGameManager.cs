@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class InGameManager : MonoBehaviour
 {
     public static InGameManager instance;
@@ -13,10 +14,11 @@ public class InGameManager : MonoBehaviour
     [SerializeField] Board board;
     [SerializeField] Text endText;
     [HideInInspector] public int round = 0;
-    public GameObject cutton, gameEnd, loading, cuttonCover;
+    public GameObject cutton, loading, cuttonCover;
     public GameObject player1Panel, player2Panel;
     public GameEnd gameEndScpt;
     [HideInInspector] public bool winnerCheck = false; // 최종게임결과출력에서 사용합니다
+    
 
     void Awake()
     {
@@ -76,7 +78,13 @@ public class InGameManager : MonoBehaviour
 
             if(p1Piece.boardNum == 11 || p2Piece.boardNum == 11) 
             {
-                gameEnd.SetActive(true);
+                if((gameManager.gameMode == "singleRound")||(p1Piece.boardNum == 11 && gameManager.p1score == 1)||(p2Piece.boardNum == 11 && gameManager.p2score == 1))
+                {
+                    break;
+                }
+                cuttonCover.SetActive(true);
+                cutton.SetActive(true);
+                loading.SetActive(false);
                 if(p1Piece.boardNum == 11)
                 {
                     endText.text = "플레이어 1 승리";
@@ -87,9 +95,11 @@ public class InGameManager : MonoBehaviour
                     endText.text = "플레이어 2 승리";
                     winnerCheck = true;
                 }
+                yield return new WaitForSeconds(0.7f);
                 gameEndScpt.ShowResult();
                 break; 
             } 
+
             if(round != 1) { cutton.SetActive(true); }
             
 
@@ -119,7 +129,7 @@ public class InGameManager : MonoBehaviour
             }
         }
 
-        GetResult();    
+        GetResult(); 
     }
 
     void GetResult()
@@ -137,6 +147,14 @@ public class InGameManager : MonoBehaviour
         {
             gameManager.p1score = 0;
             gameManager.p2score = 0;
+            gameManager.gobackStartScene = true;
+            SceneManager.LoadScene("StartScene");
+        }
+        else if((gameManager.p1score == 2)||(gameManager.p2score == 2))
+        {
+            gameManager.gobackStartScene = true;
+            SceneManager.LoadScene("StartScene");
         }
     }
+
 }
