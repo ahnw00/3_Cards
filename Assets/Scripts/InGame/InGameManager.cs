@@ -95,7 +95,7 @@ public class InGameManager : MonoBehaviour
                     endText.text = "플레이어 2 승리";
                     winnerCheck = true;
                 }
-                yield return new WaitForSeconds(0.7f);
+                yield return new WaitForSeconds(3f);
                 gameEndScpt.ShowResult();
                 break; 
             } 
@@ -143,18 +143,12 @@ public class InGameManager : MonoBehaviour
             gameManager.p2score += 1;
         }
         
-        if(gameManager.gameMode == "singleRound")
+        if(gameManager.gameMode == "singleRound" || (gameManager.p1score == 2) || (gameManager.p2score == 2))
         {
             gameManager.p1score = 0;
             gameManager.p2score = 0;
             gameManager.gobackStartScene = true;
             SceneManager.LoadScene("StartScene");
         }
-        else if((gameManager.p1score == 2)||(gameManager.p2score == 2))
-        {
-            gameManager.gobackStartScene = true;
-            SceneManager.LoadScene("StartScene");
-        }
     }
-
 }

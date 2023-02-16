@@ -93,11 +93,7 @@ public class ResultPanel : MonoBehaviour
     {
         gameManager.p1score = 0;
         gameManager.p2score = 0;
-        
-        if(gameManager.gameMode == "multipleRound")
-        {
-            gameManager.multiroundCount = 0;
-        }
+        gameManager.multiroundCount = 0;
     }
 
     IEnumerator TextFade(int first, float final, GameObject obj)

@@ -19,14 +19,13 @@ public class GameEnd : MonoBehaviour
 
     IEnumerator delayTime()
     {
-       yield return new WaitForSeconds(0.5f);
-
+       yield return new WaitForSeconds(2.5f);
     }
 
     public void ShowResult()
     {
         this.gameObject.SetActive(true);
-        delayTime();
+        //delayTime();
         cuttonCover.SetActive(false);
         // 3 클릭 받고 글자 페이드 아웃
         // 4 구름 애니메이션 끝나는 부분 
@@ -36,12 +35,10 @@ public class GameEnd : MonoBehaviour
     public void GotoStartScene()
     {
         this.gameObject.SetActive(false);
-        //원래라면 여기에 커튼이 걷히는 효과를 넣어야 하나.. 기술 부족으로 구현 실패...
-        delayTime();
         SceneManager.LoadScene("StartScene");
     }
 
-        public void ChangeAudioClip(AudioClip clip)
+    public void ChangeAudioClip(AudioClip clip)
     {
         this.GetComponent<AudioSource>().clip = clip;
         this.GetComponent<AudioSource>().Play();

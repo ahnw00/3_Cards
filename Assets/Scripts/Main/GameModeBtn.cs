@@ -22,6 +22,7 @@ public class GameModeBtn : MonoBehaviour
     // Start is called before the first frame update
     public void ChangeMode()
     {
+        gameManager.multiroundCount = 0;
         if(gameManager.gameMode == "singleRound")
         {
             this.GetComponent<Image>().sprite = multipleRoundImg;
