@@ -8,8 +8,8 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
     public AudioMixer audioMixer;
-    float bgmVolume;
-    float sfxVolume;
+    public float bgmVolume;
+    public float sfxVolume;
     
     void Awake()
     {
