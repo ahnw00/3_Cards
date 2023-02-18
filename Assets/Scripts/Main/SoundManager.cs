@@ -27,7 +27,7 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioMixer.SetFloat("BGM", -10);
+        audioMixer.SetFloat("BGM", 0);
         audioMixer.SetFloat("SFX", 0); // 이런식으로 사용하면 돼 ^^
     }
 }

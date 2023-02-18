@@ -8,6 +8,7 @@ public class Cutton : MonoBehaviour
     SlotManager slotManager;
     GameObject player1Panel, player2Panel;
     [SerializeField] GameObject loading;
+    [SerializeField] GameObject clickText;
 
     // Start is called before the first frame update
     void Start()
@@ -57,5 +58,13 @@ public class Cutton : MonoBehaviour
             slotManager.CompareCardNum();
         }
         this.gameObject.SetActive(false);
+    }
+
+    public void SetOnClick()
+    {
+        if(inGameManager.player1Turn || inGameManager.player2Turn)
+        {
+            clickText.SetActive(true);
+        }
     }
 }
